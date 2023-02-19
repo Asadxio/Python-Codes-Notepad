@@ -1,0 +1,41 @@
+REFER THE FOLLOWING DATABASES:
+Drive link for the “products” table: SQL where statement database(products).xlsx
+Drive link for the “customer” table: SQL where statement database(customer).xlsx
+Write SQL statement  to lists the number of customers in each country. Only include countries with more than 3 customers:
+
+
+Write SQL statement to lists the number of orders sent by each shipper, the information is in two table so join is also with Group by statement:
+As you can see in below example the ShipperID is common in both tables Orders and Shippers.
+(image)
+
+
+Find the number of customers in each country using group by statement
+
+
+
+Write a multiple order by a statement where the county is in ascending order and the customer name is in descending order from the customer's table
+
+
+
+Write a SQL statement to selects all customers from the "Customers" table, sorted by the "Country" column in descending order:
+
+
+
+Write a SQL statement to selects all customers from the "Customers" table, sorted by the "Country" column:
+
+
+
+Write a SQL statement, to select all fields from "Customers" where the country is NOT "Germany" and NOT "USA":
+
+
+
+REFER THE FOLLOWING DATABASES:Drive link for the “products” table: SQL where statement database(products).xlsx
+
+Drive link for the “customer” table: SQL where statement database(customer).xlsx
+
+Write a SQL statement, selects all fields from "Customers" where the country is "Germany" AND city must be "Berlin" OR "München" (use parenthesis to form complex expressions):
+ 
+
+
+
+

@@ -1,0 +1,81 @@
+1
+Select all the columns from the table Customers where the country is Germany and City is Berlin.
+
+-- create
+CREATE TABLE Customers (
+  empId INTEGER PRIMARY KEY,
+  Country TEXT NOT NULL,
+  City TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO Customers VALUES (0001, 'Germany', 'Berlin');
+INSERT INTO Customers VALUES (0002, 'palestine', 'Gaza');
+INSERT INTO Customers VALUES (0003, 'India', 'Delhi');
+
+-- fetch 
+SELECT * FROM Customers WHERE Country = 'Germany';
+
+2
+Write a query to find out the city where the city is Paris and London from the Customers table
+
+-- create
+CREATE TABLE Customers (
+  empId INTEGER PRIMARY KEY,
+  Country TEXT NOT NULL,
+  City TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO Customers VALUES (0001, 'Uk', 'paris');
+INSERT INTO Customers VALUES (0002, 'UK', 'london');
+INSERT INTO Customers VALUES (0003, 'India', 'Delhi');
+
+-- fetch 
+SELECT * FROM Customers WHERE Country = 'UK';
+
+
+
+3
+Write a query to find out ProductName and SupllierID from table Products where supplierID is not equal to 1(image desktop)
+Select ProductName,SupplierID from products where SupplierID!=1
+
+4
+Write a query to find out the prices between 50 and 100 from the products table
+SELECT * FROM products
+   WHERE Price BETWEEN 50 AND 100;
+
+
+5
+Write a query to find out the price of items that are not equal to 30 from the products table.
+SELECT * FROM products
+   WHERE Price !=30;
+
+6
+Write a statement to find out the price of a product greater than 50
+SELECT * FROM products
+   WHERE Price >50;
+
+
+7
+Write a query to find out the price of items greater than 30 and equal to 30 from the products table.
+SELECT * FROM products
+   WHERE Price >=30
+
+8
+Write a statement and get a price from the product table where the price is greater than 30(image desktop)
+SELECT * FROM products
+   WHERE Price >30
+
+9
+Write a statement to find the fruit which is red on the basket table
+SELECT * FROM basket_fruit WHERE Colour='Red'
+
+
+
+10
+Write a SQL statement to select all the customers from the country "USA", in the "Clients" table:
+select * from clients where country like 'USA'
+
+
+

@@ -1,0 +1,231 @@
+Assume you have two lists a=[1,3,5,7] b=[2,4,6,8,10]  
+i.First task is to create a list which has elements from both the list & name it 'ab'  
+ii.Write a function which can reverse the elements of ab.
+
+a=[1,3,5,7]
+b=[2,4,6,8,10]
+ab=(a+b)
+print(ab)
+ab=ab[ : : -1]
+print(ab)
+---------------
+Can a list be converted into a set? Explain with the help of an example.
+
+my_list=[1,2,3,4,5,6,7,8,9]
+my_set=set(my_list)
+print(my_set)
+type(my_set)
+
+----------------------------------------------------------
+Extract 3000 from the given list
+
+Y=[1,3,4,6,7,9,10, 4+7j, "Hello world", [2000,3000,1000]]
+print(Y)
+print(Y[-1][-2])
+---------------------------------------------------------------
+Extract '09' from this:
+G=["2022-09-03"]
+G[0][3:5]
+-----------------------------------------------------------
+Write a code to add a key to a dictionary
+Use the given dictionary and add a key (4:16)
+
+square_dictionary = {1:1, 2:4, 3:9}
+square_dictionary.update({4:16})
+square_dictionary
+
+------------------------------------------------------------
+(i)Count the occurence of "me" in the given string below.
+(ii)Extract "python@gmail"
+
+str="Hello,please meet me at 4pm @coffeehouseccd or email me python@gmail.com"
+print(str.count('me'))
+
+print((str)[-17:-4])
+----------------------------------------------------------------------------------------
+Write a program to perform following set operations:
+
+a. Union
+b. Intersection
+c. Set of all the elements of set A that are not in set B
+d. Set of all the elements of set B that are not in set A
+e. Symmetric difference
+Use the below set:
+
+A = {1, 4, 5, 2, 6, 3, 40, 7, 87, 4, 71}
+
+B = {3, 42, 51, 6, 7, 8, 54, 5}
+set.union(A,B)
+
+def intersection(A,B):
+    C = [value for value in A if value in B]
+    return C
+print(intersection(A,B))
+
+print (A.difference(B))
+
+print (B.difference(A))
+
+c = A.symmetric_difference(B)
+print(c)
+------------------------------------------------------------------------
+Write the program to perform following manipulations:
+
+a. Add '7' to the given set
+b. Remove '3' from a given set
+c. Clear the set
+Use the below set for manipulation
+
+num_set = {1, 2, 3, 4, 5, 6}
+
+num_set.add(7)
+print(num_set)
+
+num_set.remove(3)
+print(num_set)
+
+num_set.clear()
+print(num_set)
+
+-----------------------------------------------------------------
+Replace the elements in the given tuple:
+
+a. Replace '2' with '3'
+b. Replace 'True' in first element with 'False'
+Use the tuple below:
+
+mix_tuple = (['a', 1, True], 2, 'Science', -5)
+mix_tuple = (['a', 1, True], 2, 'Science', -5)
+a= list(mix_tuple)
+a[1]=3
+mix_tuple =tuple(a)
+print(mix_tuple)
+
+
+
+
+mix_tuple = (['a', 1, True], 2, 'Science', -5)
+a= list(mix_tuple)
+a[0][2]=False
+mix_tuple =tuple(a)
+print(mix_tuple)
+
+
+
+---------------------------------------------------------------
+Write a code to perform operations on tuple:
+
+a. Check the length of num_tuple
+b. Concatenate the num_tuple and mix_tuple
+c. Repeat the mix_tuple two times
+Tuples to perform operations:
+
+num_tuple = (4, 4, 8)
+
+mix_tuple = 'John', 5, -2
+
+
+
+print(len(num_tuple))
+print(num_tuple+mix_tuple)
+
+mix_tuple = ('John', 5, -2) * 2
+print(mix_tuple)
+
+----------------------------------------------------------------
+Write a program to perform following built-in list operations:
+
+a. Min(list)
+b. Max(list)
+c. Sort the elements (use sort() and sorted() function)
+d. Create a copy of a list
+e. Remove element '5' from the list
+
+Use the below list
+
+num_list = [4, 5, 7, -2, 0, 1]
+
+min(num_list)
+
+max(num_list)
+
+print(sorted(num_list))
+print("\nOriginal list after sorting:")
+print(num_list)
+
+num_list.copy()
+
+num_list = [4, 5, 7, -2, 0, 1]
+num_list.remove(5)
+print(num_list)
+
+
+----------------------------------------------------------------
+Write a code to retrieve elements from a list
+
+a. First element
+b. Second last element
+c. First three elements
+d. Slice the list from 1st index till the last index with an increment of an index by 2
+Use the below list:
+
+mix_list = ['Python', 1, 2, 3, 'Data', True]
+
+
+mix_list = ['Python', 1, 2, 3, 'Data', True]
+print(mix_list[0])
+
+
+mix_list = ['Python', 1, 2, 3, 'Data', True]
+print(mix_list[-2])
+
+mix_list = ['Python', 1, 2, 3, 'Data', True]
+print(mix_list[0:3])
+
+
+
+--------------------------------------------------------------------------------------------
+Write the program to multiply the two lists
+Lists to perform multiplication:
+
+num_list_1 = [1, 2, 3, 4]
+
+num_list_2 = [0, 5, 2, 1]
+num_list_1 = [1, 2, 3, 4]
+
+num_list_2 = [0, 5, 2, 1]
+wait
+num_list2 = [0,5,2,1]
+nahe ara
+
+------------------------------------------------------
+Write a program to perform following list operations on the list given below:
+
+a. Check the length of mix_list_1
+B. Concatenate the mix_list_1 and mix_list_2
+C. Repeat the mix_list_2 three times
+
+Lists to perform operations:
+
+mix_list_1 = ['Learn', 24, 'Blue', False, -8]
+
+mix_list_2 = [4, 7, 'Summer']
+
+print(len(mix_list_1))
+print(mix_list_1+mix_list_2)
+print(mix_list_2*3)
+
+-----------------------------------------------------------------------------------------
+Create a string with a name 'country' and 'India' as its elements. Perform the following:
+ a. Find its length
+ b. extract its first two letters
+
+
+name = 'country India'
+length = len(name)
+print(length)
+
+
+name = 'country India'
+first_two = name[:2]
+print(first_two)

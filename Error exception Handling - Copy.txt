@@ -1,0 +1,102 @@
+
+
+
+
+
+Is it possible to keep other statements in between ‘try’, ‘catch’, and ‘finally’ blocks?
+
+try:
+  # code that might throw an exception
+except ValueError:
+  # code that handles a ValueError exception
+except TypeError:
+  # code that handles a TypeError exception
+else:
+  # code that is executed if no exception is raised
+finally:
+  # code that is always executed
+  
+  Yes, it is possible to include other statements in between the try, except, and finally blocks.
+
+For example, you can include an else block after the try block and before the except block. The code in the else block will be executed if no exception is raised in the try block.
+
+You can also include multiple except blocks to handle different types of exceptions. The code in the first except block that matches the type of the raised exception will be executed.
+
+Here's an example with an else block and multiple except blocks:
+  
+  The finally block is optional and is used to specify code that should always be executed, whether an exception is raised or not.
+
+
+
+How to catch specific exception? Give one example
+
+For example, to catch a ValueError exception, you can use a block like this:
+
+try:
+  # code that might throw a ValueError exception
+except ValueError:
+  # code that handles the ValueError exception
+If a ValueError exception is raised in the try block, the program will jump to the except block and execute the exception handling code. If no ValueError exception is raised, the except block will be skipped.
+
+Here's an example of using a try-except block to catch a specific exception:
+
+try:
+  number = int("abc")
+except ValueError:
+  print("Invalid input: could not convert string to integer")
+In this example, the int function is called with a string argument ("abc"), which will raise a ValueError exception because the string cannot be converted to an integer. The except block will catch the exception and print an error message.
+
+
+
+How to Handle multiple exceptions with a single except clause ?
+Give one example, We can also handle multiple exceptions with a single except clause. For that, we can use a tuple of values to specify multiple exceptions in an except clause.
+
+
+Try showing one example of Using try with finally
+
+a = 10
+b = 2
+
+try:
+    c = a / b
+    print(c)
+except ZeroDivisionError as error:
+    print(error)
+finally:
+    print('Finishing up.')
+
+
+
+How to customize Exception Classes?
+
+Every syntax error is an exception but every exception cannot be a syntax error.” Justify the statement.
+
+
+When are the following built-in exceptions raised? Give examples to support your answers.a) ImportErrorb) IOErrorc) NameErrord) ZeroDivisionError
+
+
+What is the use of a raise statement?
+Write a code to accept two numbers and display the quotient. Appropriate exception should be raised if the user enters the second number (denominator) as zero (0).
+
+
+Use assert statement in Question No. 3 to test the division expression in the program.
+
+
+Define the following:a) Exception Handlingb) Throwing an exceptionc) Catching an exception
+
+a) Exception handling is a process in which a program handles runtime errors that occur during the execution of a program. It allows the program to continue running even if an error occurs, rather than crashing or exiting.
+
+b) Throwing an exception means raising an exception. This is done using the raise keyword, followed by an exception object. For example:
+
+raise Exception("An error occurred")
+
+c) Catching an exception means handling an exception. This is done using a try-except block, where the try block contains the code that might throw an exception, and the except block contains the code that handles the exception. For example:
+
+try:
+  # code that might throw an exception
+except Exception as e:
+  # code that handles the exception
+If an exception is thrown in the try block, the program will jump to the except block and execute the exception handling code. If no exception is thrown, the except block will be skipped.
+
+
+

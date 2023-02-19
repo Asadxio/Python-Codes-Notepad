@@ -1,0 +1,231 @@
+1
+import matplotlib.pyplot as plt
+x = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+popularity = [22.2, 17.6, 8.8, 8, 7.7, 6.7]
+x_pos = [i for i, _ in enumerate(x)]
+
+plt.bar(x_pos, popularity, color=(0.4, 0.6, 0.8, 1.0), edgecolor='blue')
+
+plt.xlabel("Languages")
+plt.ylabel("Popularity")
+plt.title("PopularitY of Programming Language\n" + "Worldwide, Oct 2017 compared to a year ago")
+plt.xticks(x_pos, x)
+# Turn on the grid
+plt.minorticks_on()
+plt.grid(which='major', linestyle='-', linewidth='0.5', color='red')
+# Customize the minor grid
+plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
+plt.show()
+
+
+
+2
+
+import matplotlib.pyplot as plt
+# Plot data
+languages = 'Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++'
+popuratity = [22.2, 17.6, 8.8, 8, 7.7, 6.7]
+#colors = ['red', 'gold', 'yellowgreen', 'blue', 'lightcoral', 'lightskyblue']
+colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"]
+# explode 1st slice
+explode = (0.1, 0, 0, 0, 0, .1)  
+# Plot
+plt.pie(popuratity, explode=explode, labels=languages, colors=colors,
+autopct='%1.1f%%', shadow=True, startangle=140)
+plt.title("PopularitY of Programming Language\n" + "Worldwide, Oct 2017 compared to a year ago", bbox={'facecolor':'0.8', 'pad':5})
+plt.show()
+
+
+
+3
+
+import matplotlib.pyplot as plt
+x = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+popularity = [22.2, 17.6, 8.8, 8, 7.7, 6.7]
+x_pos = [i for i, _ in enumerate(x)]
+
+plt.bar(x_pos, popularity, color=(0.4, 0.6, 0.8, 1.0), edgecolor='blue')
+
+plt.xlabel("Languages")
+plt.ylabel("Popularity")
+plt.title("PopularitY of Programming Language\n" + "Worldwide, Oct 2017 compared to a year ago")
+plt.xticks(x_pos, x)
+# Turn on the grid
+plt.minorticks_on()
+plt.grid(which='major', linestyle='-', linewidth='0.5', color='red')
+# Customize the minor grid
+plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
+plt.show()
+
+4
+
+import matplotlib.pyplot as plt 
+import numpy as np 
+x = np.random.randn(50) 
+y = np.random.randn(50)
+plt.scatter(x, y, s=70, facecolors='none', edgecolors='g')
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.show()
+
+
+7
+
+
+import numpy as np
+import pylab as pl
+# Make an array of x values
+x1 = [2, 3, 5, 6, 8]
+# Make an array of y values for each x value
+y1 = [1, 5, 10, 18, 20]
+# Make an array of x values
+x2 = [3, 4, 6, 7, 9]
+# Make an array of y values for each x value
+y2 = [2, 6, 11, 20, 22]
+# set new axes limits
+pl.axis([0, 10, 0, 30]) 
+# use pylab to plot x and y as red circles
+pl.plot(x1, y1,'b*', x2, y2, 'ro')
+# show the plot on the screen
+pl.show()
+
+
+8
+
+import matplotlib.pyplot as plt
+import pandas as pd
+math_marks = [88, 92, 80, 89, 100, 80, 60, 100, 80, 34]
+science_marks = [35, 79, 79, 48, 100, 88, 32, 45, 20, 30]
+marks_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+plt.scatter(marks_range, math_marks, label='Math marks', color='r')
+plt.scatter(marks_range, science_marks, label='Science marks', color='g')
+plt.title('Scatter Plot')
+plt.xlabel('Marks Range')
+plt.ylabel('Marks Scored')
+plt.legend()
+plt.show()
+
+
+
+9
+
+import matplotlib.pyplot as plt
+import pandas as pd
+math_marks = [88, 92, 80, 89, 100, 80, 60, 100, 80, 34]
+science_marks = [35, 79, 79, 48, 100, 88, 32, 45, 20, 30]
+marks_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+plt.scatter(marks_range, math_marks, label='Math marks', color='r')
+plt.scatter(marks_range, science_marks, label='Science marks', color='g')
+plt.title('Scatter Plot')
+plt.xlabel('Marks Range')
+plt.ylabel('Marks Scored')
+plt.legend()
+plt.show()
+
+
+
+
+10
+
+import matplotlib.pyplot as plt
+# line 1 points
+x1 = [10,20,30]
+y1 = [20,40,10]
+# line 2 points
+x2 = [10,20,30]
+y2 = [40,10,30]
+# Set the x axis label of the current axis.
+plt.xlabel('x - axis')
+# Set the y axis label of the current axis.
+plt.ylabel('y - axis')
+# Set a title 
+plt.title('Two or more lines with different widths and colors with suitable legends ')
+# Display the figure.
+plt.plot(x1,y1, color='blue', linewidth = 3,  label = 'line1-width-3')
+plt.plot(x2,y2, color='red', linewidth = 5,  label = 'line2-width-5')
+# show a legend on the plot
+plt.legend()
+plt.show()
+
+
+
+11
+
+import matplotlib.pyplot as plt
+from pylab import randn
+X = randn(200)
+Y = randn(200)
+plt.scatter(X,Y, color='r')
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.show()
+
+
+12
+
+
+import matplotlib.pyplot as plt
+# line 1 points
+x1 = [10,20,30]
+y1 = [20,40,10]
+# line 2 points
+x2 = [10,20,30]
+y2 = [40,10,30]
+# Set the x axis label of the current axis.
+plt.xlabel('x - axis')
+# Set the y axis label of the current axis.
+plt.ylabel('y - axis')
+# Plot lines and/or markers to the Axes.
+plt.plot(x1,y1, color='blue', linewidth = 3,  label = 'line1-dotted',linestyle='dotted')
+plt.plot(x2,y2, color='red', linewidth = 5,  label = 'line2-dashed', linestyle='dashed')
+# Set a title 
+plt.title("Plot with two or more lines with different styles")
+# show a legend on the plot
+plt.legend()
+# function to show the plot
+plt.show()
+
+
+
+13
+
+import matplotlib.pyplot as plt
+import pandas as pd
+df = pd.read_csv('fdata.csv', sep=',', parse_dates=True, index_col=0)
+df.plot()
+plt.show()
+
+
+14
+
+import matplotlib.pyplot as plt
+X = range(1, 50)
+Y = [value * 3 for value in X]
+plt.plot(X, Y)
+plt.xlabel('x - axis')
+plt.ylabel('y - axis')
+plt.title('Draw a line.')
+# shows the current axis limits values
+print(plt.axis()) 
+# set new axes limits
+# Limit of x axis 0 to 100
+# Limit of y axis 0 to 200
+plt.axis([0, 100, 0, 200]) 
+# Display the figure.
+plt.show()
+
+
+
+15
+
+
+import numpy as np
+x = np.array([0, 1, 3])
+y = np.array([2, 4, 5])
+print("\nOriginal array1:")
+print(x)
+print("\nOriginal array1:")
+print(y)
+print("\nPearson product-moment correlation coefficients of the said arrays:\n",np.corrcoef(x, y))
+
+

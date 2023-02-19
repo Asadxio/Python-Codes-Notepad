@@ -1,0 +1,83 @@
+Random sampling using weights, write a program that creates a random sample from a population using weighted probabilities.
+Definition: In weighted random sampling (WRS) the items are weighted and the probability of each item to be selected is determined by its relative weight.
+
+import pandas as pds
+
+# TimeToReach vs distance
+time2reach =  {"Distance":[10,15,20,25,30,35,40,45,50,55],
+                "TimeToReach":[15,20,25,30,40,45,50,60,65,70]};
+
+dataFrame = pds.DataFrame(data=time2reach);
+
+#weight define
+w = pds.Series(data=[0.05, 0.05, 0.05,
+                     0.05, 0.05, 0.1,
+                     0.15, 0.15, 0.15,
+                     0.2]);
+
+A)
+import numpy as np
+import pandas as pd
+
+# TimeToReach vs distance
+time2reach =  {"Distance":[10,15,20,25,30,35,40,45,50,55],
+                "TimeToReach":[15,20,25,30,40,45,50,60,65,70]};
+
+dataFrame = pd.DataFrame(data=time2reach);
+
+#weight define
+w = pd.Series(data=[0.05, 0.05, 0.05,
+                     0.05, 0.05, 0.1,
+                     0.15, 0.15, 0.15,
+                     0.2]);
+
+# Create a function to take a sample using WRS
+def weighted_random_sample(dataframe, weight):
+    # Normalize the weights
+    weight = weight / weight.sum()
+    # Select a random value between 0 and 1
+    random_value = np.random.random()
+    # Create a cumulative sum of the weights
+    cumulative_sum = weight.cumsum()
+    # Use the random value to select an index from the cumulative sum
+    index = (random_value < cumulative_sum).idxmax()
+    # Return the selected row from the dataframe
+    return dataframe.iloc[index]
+
+# Test the function by taking a sample from the dataframe
+sample = weighted_random_sample(dataFrame, w)
+print(sample)
+
+2
+import pandas as pd
+
+data = pd.read_csv("C:/Users/alias/Downloads/Compressed/archive_6/dc-wikia-data.csv")
+
+sample_size = 0.1 # 10% of the population
+
+sample = data.sample(frac=sample_size)
+
+print(sample)
+
+3
+import random
+
+population = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+start = random.randint(0, len(population) - 1)
+sampling_interval = 10
+sample = population[start::sampling_interval]
+
+print(sample)
+
+5
+
+import pandas as pd
+df=pd.read_csv("C:/Users/alias/Downloads/Compressed/archive_7/Employee_monthly_salary.csv")
+import pandas as pd
+
+data = pd.read_csv("C:/Users/alias/Downloads/Compressed/archive_7/Employee_monthly_salary.csv")
+
+sample = data.sample(n=200)
+
+print(sample)

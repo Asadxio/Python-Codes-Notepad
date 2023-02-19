@@ -1,0 +1,33 @@
+create database zomatodb;
+
+use zomatodb;
+create table Restaurant(
+R_int not null, (primary key)
+R_name varchar(20),
+R_location n float, (longitude)
+R_location n float, (lattitude)
+R_PLACE VARCHAR(20),
+R_Phone varchar(10));
+
+run 
+
+use zomatodb;
+create table Employee(
+E_ID not null, (primary key)
+E_name varchar(20),
+E_department varchar(20),
+R_salary float,
+R_PLACE varchar(20),
+R_Phone varchar(10));
+
+run
+
+rename R_phoneto E_phone (comment)
+use zomatodb;
+alter table employee
+rename column R_phone to E_phone;
+
+run
+
+drop the salary
+

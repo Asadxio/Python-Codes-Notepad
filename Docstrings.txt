@@ -1,0 +1,33 @@
+Write a code to get the match.sqrt function documentation:
+print (math.sqrt(9))
+print (math.sqrt(25))
+print (math.sqrt(16))
+
+Write a code to create your own function for adding two number and add custom docstring inside the function. And then print your function documentation.
+ 
+
+Write a code to create your own function for adding two number and add custom docstring inside the function. And then print your function documentation without __doc__.
+
+
+Write a code for one liner documentionf or a custom function
+
+n = 5
+
+# one liner code for half pyramid pattern
+print('\n'.join('* ' * i for i in range(1, n + 1)))
+
+
+
+
+Write a multi-line Docstrings code?
+
+def square(n):
+    '''Takes in a number n, returns the square of n
+and thos a Multi 
+line Doc-String code this tajes in a number n returns the square
+of a number'''
+    return n**2
+
+print(square.__doc__)
+
+

@@ -1,0 +1,255 @@
+Write a program that accepts a list from the user and print the alternate element of the list.
+
+test_list = [1, 4, 6, 7, 9, 3, 5]
+
+print("The original list : " + str(test_list))
+res = []
+for i in range(1, len(test_list), 2):
+    res.append(test_list[i])
+print("The alternate element list is : " + str(res))
+
+
+
+
+Write a python program to input a list of strings, return the maximum length of strings entered.
+
+l = eval(input("Enter list of strings: "))
+largeIdx = 0
+largeLen = 0
+
+for i in range(len(l)):
+    length = len(l[i])
+    if length > largeLen:
+        largeLen = length
+        largeIdx = i
+print("Longest String:", l[largeIdx])
+
+
+
+
+Write a program that rotates the element of a list so that the element at the first index moves to the second index,
+ the element in the second index moves to the third index, etc., and the element in the last index moves to the first index.
+
+l = eval(input("Enter the list: "))
+print("Original List")
+print(l)
+
+l = l[-1:] + l[:-1]
+
+print("Rotated List")
+print(l)
+
+
+
+Find the sum of each row of matrix of size m x n. For example for the following matrix output will be like this :
+Sum of row 1 = 32
+Sum of row 2 = 31
+Sum of row 3 = 63
+
+
+a = [    
+        [1, 2, 3],  
+        [4, 5, 6],  
+        [7, 8, 9]  
+    ];  
+   
+rows = len(a);  
+cols = len(a[0]);  
+   
+for i in range(0, rows):  
+    sumRow = 0;  
+    for j in range(0, cols):  
+        sumRow = sumRow + a[i][j];  
+    print("Sum of " + str(i+1) +" row: " + str(sumRow));  
+   
+for i in range(0, rows):  
+    sumCol = 0;  
+    for j in range(0, cols):  
+        sumCol = sumCol + a[j][i];  
+    print("Sum of " + str(i+1) +" column: " + str(sumCol));
+
+
+
+
+
+Write a program to add two matrices of size n x m
+
+X = [[12,7,3],
+    [4 ,5,6],
+    [7 ,8,9]]
+
+Y = [[5,8,1],
+    [6,7,3],
+    [4,5,9]]
+
+result = [[X[i][j] + Y[i][j]  for j in range(len(X[0]))] for i in range(len(X))]
+
+for r in result:
+   print(r)
+
+
+
+
+Write a program to multiply two matrices.
+
+X = [[12,7,3],
+    [4 ,5,6],
+    [7 ,8,9]]
+Y = [[5,8,1,2],
+    [6,7,3,0],
+    [4,5,9,1]]
+result = [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+
+for r in result:
+   print(r)
+
+
+
+
+Given an unsorted list A of size N that contains only non-negative integers, find a continuous sub-list which adds to a given number S.
+In case of multiple sub-lists, return the sub-list which comes first on moving from left to right.
+
+def subArraySum(arr, n, sum):
+
+	for i in range(0,n):
+		currentSum = arr[i]
+		if(currentSum == sum):
+			print("Sum found at indexes",i)
+			return
+		else:
+			for j in range(i+1,n):
+				currentSum += arr[i]
+				if(currentSum == sum):
+					print("Sum found between indexes",i,"and",j)
+					return
+	print("No Subarray Found")
+
+if __name__ == "__main__":
+	arr = [15,2,4,8,9,5,10,23]
+	n = len(arr)
+	sum = 23
+	subArraySum(arr, n, sum)
+
+
+
+
+
+
+Find missing numbers in a sorted list range.
+
+def find_missing(lst):
+    return [i for x, y in zip(lst, lst[1:])
+        for i in range(x + 1, y) if y - x > 1]
+
+lst = [1, 2, 4, 6, 7, 9, 10]
+print(find_missing(lst))
+
+
+
+Given a list of positive integers. Find the length of the longest sub-sequence 
+such that elements in the subsequence are consecutive integers, the consecutive numbers can be in any order.
+
+def longestConsecutive(nums):
+    longest = 0
+
+    for x in nums:
+        currNum = x
+        currStreak = 1
+
+        while (currNum+1) in nums:
+            currNum += 1
+            currStreak += 1
+
+        longest = max(currStreak, longest)
+
+    return longest
+
+
+n = input("Length of nums = ")
+
+nums = list(map(int, input("nums = ").split()))
+
+ans = longestConsecutive(nums)
+print("Length of longest consecutive subsequence in nums =", ans)
+
+
+
+
+
+Concatenate every element across lists using list comprehension
+
+test_list1 = ["Ekeeda", "is", "best"]
+test_list2 = ["Classes", "are", "Good"]
+
+print("The original list 1 is : " + str(test_list1))
+print("The original list 2 is : " + str(test_list2))
+
+temp = [(a, b) for a in test_list1 for b in test_list2]
+
+res = [x + ' ' + y for (x, y) in temp]
+
+print("The paired combinations : " + str(res))
+
+
+Count occurrence of repeated element in list
+
+def countX(lst, x):
+	count = 0
+	for ele in lst:
+		if (ele == x):
+			count = count + 1
+	return count
+lst = [8, 6, 8, 10, 8, 20, 10, 8, 8,8,10,12,23,45,56,678,23,23,23,35]
+x = 8
+print('{} has occurred {} times'.format(x,
+                                        countX(lst, x)))
+
+
+
+
+Reverse a List using slice.
+
+my_numbers = [1,2,3,4,5]
+my_numbers_reversed = my_numbers[::-1]
+print(my_numbers)
+print(my_numbers_reversed)
+
+
+
+
+Given a list of N integers, and an integer K, find the number of pairs of elements in the array whose sum is equal to K.
+
+
+Python program to compare two equal sized list and print the first index where they differ
+
+list1 = [1, 2, 3, 4,5,6,7,8,9,10,11,22,33,44,55]
+list2 = [1, 5, 3, 6,7,8,9,8,9,12,13,14,22,11,33]
+
+y = 0
+
+Output = []
+
+for x in list1:
+	if x != list2[y]:
+		Output.append(y)
+	y = y + 1
+print(Output)
+
+
+Find out the first repeating element in a list
+
+list1 = [1, 6, 4, 5, 5, 3, 4, 6,7,8,9,1,2,3,4,5,6,7,8,9]
+
+repeat_ele = -1
+
+for element in list1:
+    c = arr.count(element)
+    if c > 1:
+        repeat_ele = element
+        break;
+        
+if repeat_ele == -1:
+    print("There are no repeating elements in array")
+else:
+    print("The first repeating element is",repeat_ele)
+

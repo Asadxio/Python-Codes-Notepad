@@ -1,0 +1,160 @@
+Convert string to dictionary ;
+stringg= ‘ekeeda’
+
+
+stringg={'e':3,'k':1,'d':1,'a':1}
+type(stringg)
+print(stringg)
+
+
+
+Write a program to add multiple keys into dictionary;
+
+dictt= {'person':{ "Name" : "Simulen", 
+          "City" : "CA", 
+          "Country" : "USA"}}
+
+
+dictt = {'person':{ "Name" : "Simulen", 
+          "City" : "CA", 
+          "Country" : "USA"}}
+
+# Add multiple keys to the dictionary
+dictt['person'].update({'Age': 32, 'Gender': 'Male'})
+
+print(dictt)
+
+
+
+
+
+
+Check the key for the minimum value in a dictionary;
+    
+dictt = {
+  'Physics': 82,
+  'Math': 65,
+  'history': 75
+}
+min(dictt)
+
+
+
+
+Check if there’s a particular value in a dict;
+dicttt = {'a': 100, 'b': 200, 'c': 300}
+ 
+
+dicttt = {'a': 100, 'b': 200, 'c': 300}
+
+# Check if the value 200 is in the dictionary
+print(200 in dicttt.values())
+
+# Check if the value 400 is in the dictionary
+print(400 in dicttt.values())
+
+
+
+Print the dictionary where we drop the empty value from the dictionary;
+    dict_num = {1: ‘a’, 2: ‘b’, 3: ‘c’, 4: ‘d’, 5: ‘e’, 6: None}
+dict_num={1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: None}
+dict_num ={key:value for (key, value) in dict_num.items() if value is not None}
+print(dict_num)
+
+
+Print a dictionary with key values in a table manner;
+dict_num = {1: ‘a’, 2: ‘b’, 3: ‘c’, 4: ‘d’, 5: ‘e’, 6: ‘f’}
+
+dict_num = {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}
+
+# Print the dictionary in a table format
+print('Key'.ljust(10) + 'Value')
+print('-' * 20)
+for k, v in dict_num.items():
+    print('{} {}'.format(str(k).ljust(10), v))
+
+
+
+
+Create a data for 2 students using dictionary and print it line by line.
+
+students = {'Asad':{'class':'1st',
+        'rolld_id':1},
+        'Tawakkal':{'class':'Vth',
+        'roll_id':3}}
+for a in students:
+    print(a)
+    for b in students[a]:
+        print (b,':',students[a][b])
+
+
+
+From the dictionary given below, sort the elements based on the keys;
+    dictt = {‘dh’:5, ‘ani’:6,’zimb’: 8}
+
+dictt = {'dh':'5', 'ani':'6','zimb': '8'}
+dict1 = OrderedDict(sorted(dictt.items()))
+print(dict1)
+
+Write a program to create a dictionary containing some values and add all the value from that dictionary.
+my_dict = {'data1':100,'data2':-54,'data3':247}
+print(sum(my_dict.values()))
+
+
+Write a program to make dictionary ranging between keys 7-14(both excluded) and the values are square of the keys
+d=dict()
+for x in range(7,14):
+    d[x]=x**2
+print(d)  
+
+
+Write a Python program to convert given a dictionary to a list of tuples
+def test(d):
+  return list(d.items())
+ 
+d = {'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
+print("Original Dictionary:")
+print(d)
+print("\nConvert the said dictionary to a list of tuples:")
+print(test(d))
+
+
+
+Create a dictionary having Values=key*key and keys ranging from 1 to n
+n=int(input("Input a number "))
+d = dict()
+
+for x in range(1,n+1):
+    d[x]=x*x
+
+print(d)
+
+
+Write a program to concatenate the given dictionaries;
+dictt1={1:10, 2:20}
+dictt2={3:30, 4:40}
+dictt3={5:50, 6:60}
+dict_4 = {**dictt1,**dictt2, **dictt3}
+print (dict_4)
+
+
+
+Write a Python program to add a key to a dictionary.
+Dicti = {0:’a’, 1:’a’}
+
+Dicti = {0:'a', 1:'a'}
+print(Dicti)
+Dicti.update({2:0})
+print(Dicti)
+
+
+Use dictionary comprehension to make dictionary from following keys and values given;
+
+keys = ['E','K','E','E','D','A']
+values = [1,2,3,4,5,6]
+
+
+keys = ['E','K','E','E','D','A']
+values = [1,2,3,4,5,6] 
+EKEEDA = { k:v for (k,v) in zip(keys, values)}  
+print (EKEEDA)

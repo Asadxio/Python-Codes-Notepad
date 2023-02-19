@@ -1,0 +1,216 @@
+Accept a number and check whether it is palindrome or not.
+
+num=int(input("Enter a number:"))
+temp=num
+rev=0
+while(num>0):
+    dig=num%10
+    rev=rev*10+dig
+    num=num//10
+if(temp==rev):
+    print("The number is palindrome!")
+else:
+    print("Not a palindrome!")
+
+
+
+Write a program to display all the numbers which are divisible by 11 but not by 2 between 100 and 500.
+
+nl=[]
+for x in range(100, 500):
+    if (x%7==0) and (x%5==0):
+        nl.append(str(x))
+print (','.join(nl))
+
+
+
+Write a program to find the sum of the digits of a number accepted from user
+def sumDigits(no):
+	return 0 if no == 0 else int(no % 10) + sumDigits(int(no / 10))
+
+n = 12345
+print(sumDigits(n))
+
+
+
+
+Write a program to find the factorial of a number.
+
+num = 1
+
+num = int(input("Enter a number: "))
+
+factorial = 1
+
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial)
+
+
+
+
+Write a program to display the product of the digits of a number accepted from the user.
+
+Calculate the average of the number given in the list through loop.
+list1=[34,6,43,2,32,44,55,33,32]
+
+list1=[34,6,43,2,32,44,55,33,32]
+res1 = 0
+for num in list1:
+    res1 += num
+avg1 = res1 / len(list1)
+print("sum is: ", res1, "Average is: ", avg1)
+
+
+
+Write a program swap the keys to values and values to keys of the given dictionary.
+ Module 
+= {'Data Science':1,'Machine Learning':2, 'SQL':3, 'Big Data':4}
+ Output: {1:'Data Science',2:'Machine Learning', 3:'SQL', 4:'Big Data'}
+
+old_dict ={'Data Science':1,'Machine Learning':2, 'SQL':3, 'Big Data':4}
+
+new_dict = dict([(value, key) for key, value in old_dict.items()])
+print ("Original dictionary is : ")
+print(old_dict)
+
+print()
+print ("Dictionary after swapping is : ")
+print("keys: values")
+for i in new_dict:
+	print(i, " : ", new_dict[i])
+
+
+
+
+
+Write a program to extract the words from the given list which have their first character in uppercase.
+ Days = ['Monday', 'tuesday','friday', 'Sunday', 'Saturday']
+ Output: ['Monday', 'Sunday', 'Saturday']
+
+Write a program to count all the elements from wrong text but it should not consider space and vowels
+wrong="""But soft what light through yonder window breaks It is the east and Juliet is the sun Arise fair 
+        sun and kill the envious moon Who is already sick and pale with grief"""
+
+
+def countCharacterType(str):
+
+
+	vowels = 0
+	consonant = 0
+	specialChar = 0
+	digit = 0
+	for i in range(0, len(str)):
+		
+		ch = str[i]
+
+		if ( (ch >= 'a' and ch <= 'z') or
+			(ch >= 'A' and ch <= 'Z') ):
+
+			ch = ch.lower()
+
+			if (ch == 'a' or ch == 'e' or ch == 'i'
+						or ch == 'o' or ch == 'u'):
+				vowels += 1
+			else:
+				consonant += 1
+		
+		elif (ch >= '0' and ch <= '9'):
+			digit += 1
+		else:
+			specialChar += 1
+	
+	print("Vowels:", vowels)
+	print("Consonant:", consonant)
+	print("Digit:", digit)
+	print("Special Character:", specialChar)
+str = "But soft what light through yonder window breaks It is the east and Juliet is the sun Arise fair sun and kill the envious moon Who is already sick and pale with grief"
+countCharacterType(str)
+
+
+
+
+
+Remove duplicates from the given list num2 using loop.
+num2=[1,2,3,41,3,5,4,56,4,56,4,4,36,6,66,6,645,3,3,5,6,8
+
+
+def Remove(duplicate):
+    final_list = []
+    for num in duplicate:
+        if num not in final_list:
+            final_list.append(num)
+    return final_list
+num2=[1,2,3,41,3,5,4,56,4,56,4,4,36,6,66,6,645,3,3,5,6,8]
+print(Remove(num2))
+
+
+Write a program to check whether two numbers are amicable or not (take the input from the user).
+
+x=int(input('Enter number 1: '))
+y=int(input('Enter number 2: '))
+sum1=0
+sum2=0
+for i in range(1,x):
+    if x%i==0:
+        sum1+=i
+for j in range(1,y):
+    if y%j==0:
+        sum2+=j
+if(sum1==y and sum2==x):
+    print('Amicable!')
+else:
+    print('Not Amicable!')
+
+Write a program to check whether a number is prime or not (take the input from user)
+
+num = int(input("input a number"))
+if num > 1:
+    for i in range(2, int(num/2)+1):
+        if (num % i) == 0:
+            print(num, "is not a prime number")
+            break
+    else:
+        print(num, "is a prime number")
+else:
+    print(num, "is not a prime number")
+
+Reverse string using a for loop (take the input from user).
+
+
+def reverse(string):
+    string = string[::-1]
+    return string
+s=str(input("Enter a string here"))
+print("The original string is : ", end="")
+print(s)
+print("The reversed string(using extended slice syntax) is : ", end="")
+print(reverse(s))
+
+Write a program for generating a fibonacci series starting with 0 and 1 for the next 10 values using a while loop
+
+
+def fibonacci_numbers(num):
+    if num == 0:
+        return 0
+    elif num == 1:
+        return 1
+    else:
+        return fibonacci_numbers(num-2)+fibonacci_numbers(num-1)
+    n = 7
+for i in range(0, n):
+    print(fibonacci_numbers(i), end=" ")
+
+Write a code to print table of 5 using assignment operand +=.(using while)
+
+i =1
+n=5
+while i<=10:
+    print(n ," * ",i," = ",n*i)
+    i=i+1
+

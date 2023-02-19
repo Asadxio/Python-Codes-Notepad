@@ -1,0 +1,114 @@
+Write a program to print the product of two numbers 'x' and 'y'
+
+x=[1,2,3,4,5,6,7,8,9,0]
+y=[11,22,33,44,55]
+xy=x+y
+print(xy)
+---------------------------------
+Display the following pattern using single print().
+*
+**
+***
+****
+
+n = 4 
+for i in range(0, n):  
+        for j in range(0, i + 1):  
+            # printing stars  
+            print("* ", end="")       
+        print()
+--------------------------------------
+Write a Python program to print the calendar of a given month and year.
+Note : Use the 'calendar' module.
+
+import calendar
+y = int(input("Input the year : "))
+m = int(input("Input the month : "))
+print(calendar.month(y, m))
+
+
+
+Display the sum of 5 + 10, using two variables: x and y.
+
+x=5
+y=10
+print(x+y)
+---------------------
+--------------------------------------
+Create a variable called z, assign x + y to it, and display the result.(you can take any values of x&y).
+
+
+x='data'
+y='science'
+z=(x+y)
+print(z)
+--------------------
+Write a Python program which accepts the user's first and last name and print them in reverse order with a space between them.
+
+fname = input("Input your First Name : ")
+lname = input("Input your Last Name : ")
+print ("Hello  " + lname + " " + fname)
+-----------------------------------------------------
+Q7
+speed_of_light=299792458
+print(speed_of_light)
+--------------------------------------------------
+NumPy - MCQ Assignment 1
+NumPy - MCQ Assignment 1
+PARTITION BY - MCQ Assignment 1
+==========================================================
+Q8
+x = 20
+y = 3
+z=(x/y)
+print(z)
+print(x % y)
+--------------------------------------------------------
+Q10
+a= " Mr"
+b= " Asad"
+c= " ali"
+print("Hello"+a+b+c)
+==============================================
+Q11
+a=10/3
+print(a)
+---------------------------------------------------
+Q12
+a=4
+b=5
+c= a&b
+print(c)
+----------------------------------------
+Q13
+import numpy
+ 
+print( numpy.pi )
+------------------------------------------------
+Q14
+x = 5
+y = 10
+temp = x
+x = y
+y = temp
+
+print("The value of x after swapping: {}".format(x))
+print('The value of y after swapping: {}'.format(y))
+--------------------------------------------------------------
+Q15
+q, r = divmod(542, 6)
+print("Quotient: ", q)
+--------------------------------
+Q9
+def power(n,e):
+    res=0
+    for i in range(e):
+        res *= n
+    return res
+print(pow(4,2))
+---------------------------------------------
+x=[1,2,3,4,5,6,7,8,9,0]
+y=[11,22,33,44,55]
+xy=x+y
+print(xy)
+---------------------------------------------

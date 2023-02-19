@@ -1,0 +1,211 @@
+Using union operation add to sets containing the values of days of weeks;
+
+# Set of weekdays
+weekdays = {'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'}
+
+# Set of weekend days
+weekend = {'Saturday', 'Sunday'}
+
+# Use the union operation to combine the two sets
+days_of_week = weekdays.union(weekend)
+
+print(days_of_week)
+
+
+Initilize a set having months as values from January to At, then add the rest of months to it:
+    InitilizeTheSet = (‘January’, ‘February’,’March’)
+
+# Initialize the set with the first three months
+initial_set = {'January', 'February', 'March'}
+
+# Add the rest of the months to the set
+initial_set.update(['April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
+
+print(initial_set)
+
+
+Create a freeze set containg name of weeks and delete the last elemnt of the set:
+
+# Create a frozen set with the names of the weeks
+weeks = frozenset(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+
+# Convert the frozen set to a list
+weeks_list = list(weeks)
+
+# Remove the last element from the list
+weeks_list.pop()
+
+# Convert the modified list back to a frozen set
+modified_weeks = frozenset(weeks_list)
+
+print(modified_weeks)
+
+
+
+
+Make a set containing week days and print the values from Monday to Sunday
+
+    Hint: use frozenset
+
+# Create a frozen set with the weekdays
+weekdays = frozenset(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'])
+
+# Print the values from Monday to Sunday
+for day in weekdays:
+    print(day)
+
+
+
+Find if the value h is in the given tuple:
+
+        Valuee = (‘EkeedaIsTheBest’)
+
+Print the tuple values 5 times
+    Value = (‘ekeeda’’)
+
+valuee = ("Ekeeda")
+print("The original tuple : " + str(valuee))
+N = 5
+res = ((valuee, ) * N)
+print("The duplicated tuple elements are : " + str(res))
+
+
+
+
+Tuple operations;
+Var = ('p','r','o','g','r','a','m','i','n’, ‘i’,’s’,’f’,’u’,’n')
+
+Print values between 5-8; 6-11; 5-9
+
+Var = ('p','r','o','g','r','a','m','i','n’, ‘i’,’s’,’f’,’u’,’n')
+
+# Print the values between indices 5 and 8
+print(Var[5:8])
+
+# Print the values between indices 6 and 11
+print(Var[6:11])
+
+# Print the values between indices 5 and 9
+print(Var[5:9])
+
+
+
+Remove the elements from the set in single operation
+    set1 = {10, 20, 30, 40, 50}
+
+set1 = {10,20,30,40,50}
+set1.clear()
+print(set1)
+
+
+
+Evaluate if the values in the tuple are same.
+
+    Tup = (11,11,11,11,11)
+
+Tup = (11,11,11,11,11)
+print("The original tuple : " + str(Tup))
+res = True
+for ele in Tup:
+	if not isinstance(ele, type(Tup[0])):
+		res = False
+		break
+print("Do all elements have same type ? : " + str(res))
+
+
+
+
+Sort a tuple of tuple of tuples based on the second item in it :
+
+        tup = ((x, 20), (y, 10), ('y', 45), ('z', 33))
+tup = ((x, 20), (y, 10), ('y', 45), ('z', 33))
+
+# Sort the tuple based on the second item in each tuple
+sorted_tup = sorted(tup, key=lambda x: x[1])
+
+print(sorted_tup)
+
+
+
+
+
+Write a Python program to see if the given sets have no common elements?
+x = {1,2,3,4}
+y = {4,5,6,7}
+z = {8,9,10}
+
+x = {1,2,3,4}
+y = {4,5,6,7}
+z = {8,9,10}
+
+# Check if x and y have no common elements
+print(x.isdisjoint(y))
+
+# Check if x and z have no common elements
+print(x.isdisjoint(z))
+
+# Check if y and z have no common elements
+print(y.isdisjoint(z))
+
+
+
+
+Write a Python program to compute the sum of nested tuples:
+    nums = [(1,2,22), (2,44,-44), (2,4), (2,2,2,2.2)]
+
+nums = [(1,2,22), (2,44,-44), (2,4), (2,2,2,2.2)]
+
+total = 0
+
+# Iterate through the elements of the tuple
+for tup in nums:
+    # Iterate through the elements of each nested tuple
+    for num in tup:
+        total += num
+
+print(total)
+
+
+
+
+Return a set of elements that are not present in both sets A and B:
+    A = {30, 40, 50, 60, 70}
+    B = {10, 20, 30, 40, 50}
+
+A = {30, 40, 50, 60, 70}
+B = {10, 20, 30, 40, 50}
+print (A.difference(B))
+print (B.difference(A))
+
+
+
+Add a list of elements to a set;
+sett= {"a", "b", "c"}
+li = ["x", "y", "z"]
+
+sett= {"a", "b", "c"}
+li = ["x", "y", "z"]
+sett.update(li)
+print('Modified Set: ')
+print(sett)
+
+
+
+Write a Python program to find the total number of times an item appeared in the tuple.
+Item= 2, 4, 5, 6, 2, 3, 4, 4, 7 
+
+Item= 2, 4, 5, 6, 2, 3, 4, 4, 7 
+x = Item.count(4)
+print(x)
+
+
+
+
+
+
+
+
+
+
+
+

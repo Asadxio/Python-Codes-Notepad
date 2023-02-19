@@ -1,0 +1,23 @@
+1
+Using a very popular dataset “Northwind sample database” perform a self join in “Customers” table
+Write a SQL statement to matched customers that are from the same city:
+
+
+2
+Write a Right join SQL query to specify that we want to perform a RIGHT JOIN, specifically looking for matches between the departments table and the employees table.
+DepartmentID is common in both tables
+3
+We have two tables:
+employees - This table contains each employee’s ID, name, and department ID.
+(image)
+departments - This table contains each department’s ID and name
+(image)
+try to find a column that exists in each of the tables. In this example, it is the department_id column
+
+
+
+4
+Write a SQL statement to join two tables Customers and orders, select all customerName from the customer, ordersId from orders, and any orders they might have:
+Left join using unique customerID column in both the tables and order the CustomersName by Ascending.
+5
+Write a SQL statement, to join the two tables using inner join: Customer table with Orders table both have customerID common in them and extract OrderID, OrderDate from Orders, CustomerName from Customers.

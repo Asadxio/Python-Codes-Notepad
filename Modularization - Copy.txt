@@ -1,0 +1,15 @@
+Write a simple code to make a package that contains modules
+(IMAGE)
+
+
+How to use the built-in function dir() to list all valid attributes and methods for that module? Module -math
+
+
+Write a code to see builtin modules name from a module, For example, sys
+ 
+
+Write a code to turn the Fibonacci function into a module, on import Fibonacci it would return the Fibonacci of a number.
+ 
+
+Write a program to make your own module and import the py file as a module
+
