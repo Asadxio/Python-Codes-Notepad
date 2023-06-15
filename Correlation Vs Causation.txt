@@ -1,0 +1,394 @@
+import numpy as np
+
+# Input arrays
+x = np.array([0, 1, 2, 3, 4])
+y = np.array([4, 3, 2, 1, 0])
+
+# Compute cross-correlation
+corr = np.correlate(x, y, mode='full')
+
+# Print result
+print(corr)
+
+2
+
+import numpy as np
+
+# Create a 2D array
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Compute the mean along the second axis
+mean = np.mean(arr, axis=1)
+
+# Compute the standard deviation along the second axis
+std_dev = np.std(arr, axis=1)
+
+# Compute the variance along the second axis
+variance = np.var(arr, axis=1)
+
+# Print the results
+print("Mean along second axis:", mean)
+print("Standard deviation along second axis:", std_dev)
+print("Variance along second axis:", variance)
+
+3
+
+import numpy as np
+
+# create a sample array
+arr = np.array([3, 5, 7, 9, 11])
+
+# create sample weights
+weights = np.array([0.1, 0.2, 0.3, 0.2, 0.2])
+
+# compute the weighted average
+weighted_avg = np.average(arr, weights=weights)
+
+print("Weighted Average:", weighted_avg)
+
+4
+
+import numpy as np
+
+# create two arrays
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 4, 3, 2, 1])
+
+# compute the covariance matrix
+covariance_matrix = np.cov(a, b)
+
+print(covariance_matrix)
+
+5
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# compute the 80th percentile along the second axis
+percentile_80 = np.percentile(a, 80, axis=1)
+
+print(percentile_80)
+
+6
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# calculate the difference between the maximum and minimum values along the second axis
+diff = np.ptp(a, axis=1)
+
+print(diff)
+
+7
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# get the minimum and maximum value along the second axis
+min_val = np.min(a, axis=1)
+max_val = np.max(a, axis=1)
+
+print("Minimum value along the second axis:", min_val)
+print("Maximum value along the second axis:", max_val)
+
+8
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# get the minimum and maximum value along the second axis
+min_val = np.min(a, axis=1)
+max_val = np.max(a, axis=1)
+
+print("Minimum value along the second axis:", min_val)
+print("Maximum value along the second axis:", max_val)
+
+import numpy as np
+
+# create two arrays
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 4, 3, 2, 1])
+
+# compute the covariance matrix
+covariance_matrix = np.cov(a, b)
+
+print(covariance_matrix)
+
+5
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# compute the 80th percentile along the second axis
+percentile_80 = np.percentile(a, 80, axis=1)
+
+print(percentile_80)
+
+6
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# calculate the difference between the maximum and minimum values along the second axis
+diff = np.ptp(a, axis=1)
+
+print(diff)
+
+7
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# get the minimum and maximum value along the second axis
+min_val = np.min(a, axis=1)
+max_val = np.max(a, axis=1)
+
+print("Minimum value along the second axis:", min_val)
+print("Maximum value along the second axis:", max_val)
+
+8
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# get the minimum and maximum value along the second axis
+min_val = np.min(a, axis=1)
+max_val = np.max(a, axis=1)
+
+print("Minimum value along the second axis:", min_val)
+print("Maximum value along the second axis:", max_val)
+
+import numpy as np
+
+# create two arrays
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 4, 3, 2, 1])
+
+# compute the covariance matrix
+covariance_matrix = np.cov(a, b)
+
+print(covariance_matrix)
+
+5
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# compute the 80th percentile along the second axis
+percentile_80 = np.percentile(a, 80, axis=1)
+
+print(percentile_80)
+
+6
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# calculate the difference between the maximum and minimum values along the second axis
+diff = np.ptp(a, axis=1)
+
+print(diff)
+
+7
+
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# get the minimum and maximum value along the second axis
+min_val = np.min(a, axis=1)
+max_val = np.max(a, axis=1)
+
+print("Minimum value along the second axis:", min_val)
+print("Maximum value along the second axis:", max_val)
+
+8
+import numpy as np
+
+# create a 2D array
+a = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+
+# get the minimum and maximum value along the second axis
+min_val = np.min(a, axis=1)
+max_val = np.max(a, axis=1)
+
+print("Minimum value along the second axis:", min_val)
+print("Maximum value along the second axis:", max_val)
+
+import numpy as np
+
+# create two arrays
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 4, 3, 2, 1])
+
+# compute the covariance matrix
+covariance_matrix = np.cov(a, b)
+
+print(covariance_matrix)
+
+15
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# generate some sample data
+x = np.linspace(0, 10, 100)
+y1 = x
+y2 = x**2
+
+# plot the two lines on the same plot
+plt.plot(x, y1, label='Line 1')
+plt.plot(x, y2, label='Line 2')
+
+# set plot title and labels for the x and y axes
+plt.title('Two lines on the same plot')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# add a legend to the plot
+plt.legend()
+
+# display the plot
+plt.show()
+
+14
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# generate 150 random continuous values
+x = np.random.uniform(low=0.0, high=1.0, size=150)
+y = np.random.uniform(low=0.0, high=1.0, size=150)
+
+# create a scatter plot
+plt.scatter(x, y)
+
+# set plot title and labels for the x and y axes
+plt.title('Scatter Plot of 150 Random Continuous Values')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# display the plot
+plt.show()
+
+13
+
+
+12
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# define a random array of values
+nums = np.random.normal(size=1000)
+
+# define bins to use for histogram
+bins = np.linspace(-4, 4, 17)
+
+# compute histogram of nums against the bins
+hist, bins = np.histogram(nums, bins=bins)
+
+# plot the histogram
+plt.hist(nums, bins=bins, alpha=0.5, edgecolor='black')
+
+# set plot title and labels for the x and y axes
+plt.title('Histogram of nums against Bins')
+plt.xlabel('Bins')
+plt.ylabel('Frequency')
+
+# display the plot
+plt.show()
+
+11
+
+import numpy as np
+
+# define the array of non-negative integers
+arr = np.array([1, 2, 3, 4, 1, 2, 3, 1, 2, 1])
+
+# count the number of occurrences of each value using the unique function
+unique_values, counts = np.unique(arr, return_counts=True)
+
+# print the results
+for value, count in zip(unique_values, counts):
+    print(f"{value} occurs {count} times")
+
+10
+
+import numpy as np
+
+# define the array of values
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+# define the array of weights
+weights = np.array([0.2, 0.3, 0.5])
+
+# compute the weighted average along the second axis (axis=1)
+weighted_avg = np.average(arr, axis=1, weights=weights)
+
+# print the resulting weighted average
+print(weighted_avg)
+
+9
+import numpy as np
+
+# define the array to test
+arr = np.array([1, np.nan, np.inf, -np.inf, np.datetime64('NaT'), -np.pi, np.e])
+
+# test for finiteness (not infinity or not Not a Number)
+print(np.isfinite(arr))
+
+# test for positive infinity
+print(np.isposinf(arr))
+
+# test for negative infinity
+print(np.isneginf(arr))
+
+# test for NaN (Not a Number)
+print(np.isnan(arr))
+
+# test for NaT (Not a Time)
+print(np.isnat(arr))

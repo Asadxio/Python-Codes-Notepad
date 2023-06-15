@@ -1,61 +1,125 @@
-Write a statement in Python to perform the following operations
-To open a text file “MYPT.TXT” in write mode
-To open a text file“MYPT.TXT” in read mode
-f = open("demofile2.txt", "a")
-f.write("Now the file has more content!")
-f.close()
+1
+file = open("MYPT.TXT", "r")
+file = open("MYPT.TXT", "w")
+2
+# open a file in write mode
+file = open("example.txt", "w")
+file.write("This is a test file.")
+file.close()
 
-#open and read the file after the appending:
-f = open("demofile2.txt", "r")
-print(f.read())
+# open the file in read mode and print its contents
+file = open("example.txt", "r")
+contents = file.read()
+print("Contents of the file (read mode):")
+print(contents)
+file.close()
 
+# open the file in append mode and add some more text
+file = open("example.txt", "a")
+file.write("\nThis is more text added to the file.")
+file.close()
 
-What is file mode? Name the default file mode.
+# open the file in read mode again and print its contents
+file = open("example.txt", "r")
+contents = file.read()
+print("Contents of the file after appending (read mode):")
+print(contents)
+file.close()
 
-# open file in current directory
-file1 = open("test.txt")
+# print the default file mode
+import os
+mode = os.O_RDONLY
+print("Default file mode:", mode)
+3
+with open("wel.txt", "w") as file:
+    file.write("Welcome! Please have a seat")
 
+4
+filename = "example.txt"
 
+# count number of characters
+with open(filename, "r") as file:
+    contents = file.read()
+    num_chars = len(contents)
+    print(f"Number of characters: {num_chars}")
 
+# count number of words
+with open(filename, "r") as file:
+    contents = file.read()
+    num_words = len(contents.split())
+    print(f"Number of words: {num_words}")
 
-Write a statement to write the string”Welcome! Please have a seat” in the file wel.txt, that has not yet been created.
+# count number of lines
+with open(filename, "r") as file:
+    num_lines = 0
+    for line in file:
+        num_lines += 1
+    print(f"Number of lines: {num_lines}")
+5
+with open("LOG.DAT", "rb") as file:
+    # do something with the file object
+with open("LOG.DAT", "wb") as file:
+    # do something with the file object
+6
+# Open the file in read mode
+with open("python.txt", "r") as file:
+    # Initialize word count variables
+    to_count = 0
+    the_count = 0
+    
+    # Loop through each line in the file
+    for line in file:
+        # Split the line into words
+        words = line.split()
+        
+        # Loop through each word in the line
+        for word in words:
+            # Increment the word count variables if the word is "to" or "the"
+            if word == "to":
+                to_count += 1
+            elif word == "the":
+                the_count += 1
+                
+    # Print the word counts
+    print("Number of 'to' occurrences:", to_count)
+    print("Number of 'the' occurrences:", the_count)
+7
+# Open the file in read mode
+with open("python.txt", "r") as file:
+    # Initialize the line/record number variable
+    line_number = 1
+    
+    # Loop through each line in the file
+    for line in file:
+        # Print the line number and line
+        print("Line {}: {}".format(line_number, line.strip()))
+        
+        # Increment the line number
+        line_number += 1
+8
+# Open the file in read mode
+with open("python.txt", "r") as file:
+    # Loop through each line in the file
+    for line in file:
+        # Check if the line contains the word "to"
+        if "to" in line:
+            # If the word "to" is found, print the line
+            print(line.strip())
 
-f1=open(“wel.txt”,’w’)
-f1.write (“Welcome! Please have a seat”)
-
-
-
-
-How do you find no of characters, now of words or number of lines in Python text file?
-
-
-Write a statement in Python to perform the following operations
-To open a binary file “LOG.DAT” in read mode
-To open a binary file“LOG.DAT” in write mode
-
-
-Write a program to count the words “to” and “the” present in a text file “python.txt”.
-
-
-Write a program to display all the lines in a file “python.txt” along with line/record number.
- 
-
-Write a program to display all the lines in a file “python.txt” which have the word “to” in it.
-
-
-
-
-
-Observe the following code and answer the question that follow:
-File=open(“Mydata”,”a”)
-____________# Blank 1
+9
+File = open("Mydata", "a")
+File.write("ABC\n") # Write "ABC" to the file, with a newline character at the end
 File.close()
-What type (Text/Binary) of file is Mydata?
-Fill the Blank 1 with statement to write ”ABC” in the file ”Mydata”.
 
-
-
-
-
-
-What are the differentiate File Attributes in Python?
+10
+file = open("example.txt", "w")
+file.write("Hello, World!")
+print("Name of the file:", file.name)
+print("Mode of the file:", file.mode)
+print("Is the file closed?:", file.closed)
+print("Is the file readable?:", file.readable())
+print("Is the file writable?:", file.writable())
+print("Is the file seekable?:", file.seekable())
+print("Current position of file pointer:", file.tell())
+print("Encoding of the file:", file.encoding)
+file.close()

@@ -1,0 +1,70 @@
+import numpy as np
+
+# Define the data arrays
+x = np.array([48,67,89,76,55,66,89,90,99,100,100,32,55])
+y = np.array([52,61,78,81,50,49,95,100,100,90,89,21,62])
+
+# Calculate the Pearson correlation coefficient
+pearson_coef = np.corrcoef(x, y)[0, 1]
+
+print("Pearson correlation coefficient:", pearson_coef)
+
+2
+
+from scipy.stats import pearsonr
+
+# Define the data arrays
+x = [48,67,89,76,55,66,89,90,99,100,100,32,55]
+y = [52,61,78,81,50,49,95,100,100,90,89,21,62]
+
+# Calculate the Pearson correlation coefficient
+pearson_coef, p_value = pearsonr(x, y)
+
+print("Pearson correlation coefficient:", pearson_coef)
+
+3
+
+import pandas as pd
+import numpy as np
+
+# Define the data
+X = np.array([21,31,25,40,47,38])
+Y = np.array([70,55,60,78,66,80])
+
+# Calculate the mean of X and Y
+mean_X = np.mean(X)
+mean_Y = np.mean(Y)
+
+# Calculate x^2, y^2, and xy
+X_squared = np.square(X - mean_X)
+Y_squared = np.square(Y - mean_Y)
+XY = (X - mean_X) * (Y - mean_Y)
+
+# Calculate the Pearson correlation coefficient
+pearson_corr = np.sum(XY) / (np.sqrt(np.sum(X_squared)) * np.sqrt(np.sum(Y_squared)))
+
+# Display the results
+print("x^2:", X_squared)
+print("y^2:", Y_squared)
+print("xy:", XY)
+print("Pearson correlation coefficient:", pearson_corr)
+
+4
+
+from scipy.stats import spearmanr
+
+x = [15, 18, 21, 15, 21]
+y = [25, 25, 27, 27, 27]
+
+rho, pval = spearmanr(x, y)
+print("Spearman's correlation coefficient:", rho)
+
+5
+
+from scipy.stats import spearmanr
+
+physics = [35, 23, 47, 17, 10, 43, 9, 6, 28]
+math = [30, 33, 45, 23, 8, 49, 12, 4, 31]
+
+rho, pval = spearmanr(physics, math)
+print("Spearman's correlation coefficient:", rho)

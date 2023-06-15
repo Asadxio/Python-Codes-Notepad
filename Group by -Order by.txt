@@ -3,30 +3,58 @@ Drive link for the “products” table: SQL where statement database(products).
 Drive link for the “customer” table: SQL where statement database(customer).xlsx
 Write SQL statement  to lists the number of customers in each country. Only include countries with more than 3 customers:
 
+SELECT Country, COUNT(*) as num_customers
+FROM customers
+GROUP BY Country
+HAVING COUNT(*) > 3;
+
 
 Write SQL statement to lists the number of orders sent by each shipper, the information is in two table so join is also with Group by statement:
 As you can see in below example the ShipperID is common in both tables Orders and Shippers.
 (image)
 
+SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumOrders
+FROM Orders
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY Shippers.ShipperName
+
 
 Find the number of customers in each country using group by statement
+
+SELECT country, COUNT(*) as num_customers
+FROM customers
+GROUP BY country
+ORDER BY num_customers DESC;
 
 
 
 Write a multiple order by a statement where the county is in ascending order and the customer name is in descending order from the customer's table
 
+SELECT *
+FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
+
 
 
 Write a SQL statement to selects all customers from the "Customers" table, sorted by the "Country" column in descending order:
+
+SELECT * FROM Customers ORDER BY Country DESC;
+
+
 
 
 
 Write a SQL statement to selects all customers from the "Customers" table, sorted by the "Country" column:
 
-
+SELECT *
+FROM Customers
+ORDER BY Country;
 
 Write a SQL statement, to select all fields from "Customers" where the country is NOT "Germany" and NOT "USA":
 
+SELECT *
+FROM Customers
+WHERE Country NOT IN ('Germany', 'USA');
 
 
 REFER THE FOLLOWING DATABASES:Drive link for the “products” table: SQL where statement database(products).xlsx
@@ -35,6 +63,9 @@ Drive link for the “customer” table: SQL where statement database(customer)
 
 Write a SQL statement, selects all fields from "Customers" where the country is "Germany" AND city must be "Berlin" OR "München" (use parenthesis to form complex expressions):
  
+SELECT *
+FROM Customers
+WHERE Country = 'Germany' AND (City = 'Berlin' OR City = 'München');
 
 
 

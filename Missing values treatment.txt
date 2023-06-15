@@ -1,0 +1,239 @@
+1
+Write a program to find the number of null values in the dataset(pandas dataframe)?
+import pandas as pd
+
+# Load the dataset into a pandas dataframe
+df = pd.read_csv('your_dataset.csv')
+
+# Count the number of null values in each column
+null_counts = df.isnull().sum()
+
+# Print the null value counts for each column
+print("Null value counts per column:")
+print(null_counts)
+
+# Count the total number of null values in the dataset
+total_null = df.isnull().sum().sum()
+
+# Print the total number of null values in the dataset
+print("Total number of null values in the dataset:", total_null)
+2
+Write a program to create a heatmap for missing values.
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the dataset into a pandas dataframe
+df = pd.read_csv('your_dataset.csv')
+
+# Create a heatmap of missing values in the dataframe
+sns.heatmap(df.isnull(), cbar=False)
+
+# Set the title of the heatmap
+plt.title('Missing Values Heatmap')
+
+# Show the heatmap
+plt.show()
+
+3
+Write a python program to replace Nan values in the data set quantity using Mean of the data.
+Read the data set as data 
+
+import pandas as pd
+
+# Read the dataset
+data = pd.read_csv("dataset.csv")
+
+# Calculate the mean of the "quantity" column
+mean = data["quantity"].mean()
+
+# Replace NaN values in the "quantity" column with the mean
+data["quantity"].fillna(mean, inplace=True)
+
+# Print the updated dataset
+print(data)
+
+4
+Write a python program to replace Nan values of price in the data set using Median of the data.
+ 
+import pandas as pd
+
+# Read the dataset
+data = pd.read_csv("dataset.csv")
+
+# Calculate the median of the "price" column
+median = data["price"].median()
+
+# Replace NaN values in the "price" column with the median
+data["price"].fillna(median, inplace=True)
+
+# Print the updated dataset
+print(data)
+
+5
+import pandas as pd
+import numpy as np
+
+# Read the dataset
+data = pd.read_csv("dataset.csv")
+
+# Calculate the standard deviation of the "bought" column
+std_dev = np.std(data["bought"].dropna())
+
+# Replace NaN values in the "bought" column with the standard deviation
+data["bought"].fillna(std_dev, inplace=True)
+
+# Print the updated dataset
+print(data)
+6
+Write a python program to replace Nan values of forenoon in the data set using the minimum value of the data.
+ 
+import pandas as pd
+import numpy as np
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Replace NaN values in the forenoon column with the minimum value of the data
+min_value = df.min().min()
+df['forenoon'] = df['forenoon'].fillna(min_value)
+
+# Print the updated DataFrame
+print(df)
+7
+Write a python program to illustrate the use of SimpleImputer Class
+import numpy as np
+from sklearn.impute import SimpleImputer
+
+# Creating a sample dataset with missing values
+X = np.array([[1, 2, np.nan], [3, np.nan, 5], [6, 7, 8], [np.nan, 10, 11]])
+
+# Initializing a SimpleImputer object with 'mean' strategy
+imputer = SimpleImputer(strategy='mean')
+
+# Fitting the imputer object to the dataset
+imputer.fit(X)
+
+# Transforming the dataset using the fitted imputer object
+X_imputed = imputer.transform(X)
+
+# Printing the original dataset and the imputed dataset
+print('Original Dataset:\n', X)
+print('\nImputed Dataset:\n', X_imputed)
+8
+ Write a program to replace nan values with a constant.
+import numpy as np
+import pandas as pd
+
+# Example NumPy array with NaN values
+arr = np.array([1, 2, np.nan, 4, np.nan, 6])
+
+# Replace NaN values in NumPy array with 0
+arr_fixed = np.nan_to_num(arr, nan=0)
+
+# Print original array and fixed array
+print('Original array:', arr)
+print('Fixed array:', arr_fixed)
+
+# Example Pandas DataFrame with NaN values
+df = pd.DataFrame({'A': [1, 2, np.nan, 4], 'B': [5, np.nan, 7, np.nan]})
+
+# Replace NaN values in DataFrame with -1
+df_fixed = df.fillna(-1)
+
+# Print original DataFrame and fixed DataFrame
+print('Original DataFrame:\n', df)
+print('Fixed DataFrame:\n', df_fixed)
+
+9
+Write a python program to replace Nan values of afternoon  in the data set using the maximum value of the data.
+
+import pandas as pd
+import numpy as np
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Replace NaN values in the afternoon column with the maximum value of the data
+max_value = df.max().max()
+df['afternoon'] = df['afternoon'].fillna(max_value)
+
+# Print the updated DataFrame
+print(df)
+
+10
+Write a program to drop feature containing Nan values
+import pandas as pd
+import numpy as np
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Drop features containing NaN values
+df = df.dropna(axis=1)
+
+# Print the updated DataFrame
+print(df)
+11
+Write a program to drop rows containing Nan values.
+
+
+import pandas as pd
+import numpy as np
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Drop rows containing NaN values
+df = df.dropna()
+
+# Print the updated DataFrame
+print(df)
+
+12
+Write a python program to replace Nan values of type  in the data set using the last observed carried forward.
+ 
+import pandas as pd
+import numpy as np
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Replace NaN values of type with last observed carried forward
+df['type'] = df['type'].fillna(method='ffill')
+
+# Print the updated DataFrame
+print(df)
+
+13
+Write a python program to replace Nan values of quality  in the data set interpolation
+
+import pandas as pd
+import pandas as pd
+import numpy as np
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Replace NaN values of quality with interpolated values
+df['quality'] = df['quality'].interpolate()
+
+# Print the updated DataFrame
+print(df)
+
+14
+Write a python program to replace Nan values of area  in the data set using K-NN.
+import pandas as pd
+import numpy as np
+from fancyimpute import KNN
+
+# Load the data into a pandas DataFrame
+df = pd.read_csv('data.csv')
+
+# Replace NaN values of area with KNN imputed values
+imputer = KNN()
+df['area'] = imputer.fit_transform(df[['area']])
+
+# Print the updated DataFrame
+print(df)

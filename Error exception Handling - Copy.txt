@@ -1,102 +1,113 @@
-
-
-
-
-
-Is it possible to keep other statements in between ‘try’, ‘catch’, and ‘finally’ blocks?
-
+1
 try:
-  # code that might throw an exception
-except ValueError:
-  # code that handles a ValueError exception
-except TypeError:
-  # code that handles a TypeError exception
-else:
-  # code that is executed if no exception is raised
+    # Code that may raise an exception
+    x = 1 / 0
+except ZeroDivisionError:
+    # Code to handle the exception
+    print("Error: Division by zero")
 finally:
-  # code that is always executed
-  
-  Yes, it is possible to include other statements in between the try, except, and finally blocks.
-
-For example, you can include an else block after the try block and before the except block. The code in the else block will be executed if no exception is raised in the try block.
-
-You can also include multiple except blocks to handle different types of exceptions. The code in the first except block that matches the type of the raised exception will be executed.
-
-Here's an example with an else block and multiple except blocks:
-  
-  The finally block is optional and is used to specify code that should always be executed, whether an exception is raised or not.
-
-
-
-How to catch specific exception? Give one example
-
-For example, to catch a ValueError exception, you can use a block like this:
-
+    # Code that is always executed
+    print("Done")
+2
 try:
-  # code that might throw a ValueError exception
+    # Code that may raise an exception
+    x = int("foo")
 except ValueError:
-  # code that handles the ValueError exception
-If a ValueError exception is raised in the try block, the program will jump to the except block and execute the exception handling code. If no ValueError exception is raised, the except block will be skipped.
-
-Here's an example of using a try-except block to catch a specific exception:
-
+    # Code to handle the specific exception (ValueError in this case)
+    print("Oops! That was not a valid number.")
+3
 try:
-  number = int("abc")
-except ValueError:
-  print("Invalid input: could not convert string to integer")
-In this example, the int function is called with a string argument ("abc"), which will raise a ValueError exception because the string cannot be converted to an integer. The except block will catch the exception and print an error message.
+    # Code that may raise exceptions
+    x = 1 / 0
+except (ZeroDivisionError, TypeError):
+    # Code to handle multiple exceptions
+    print("Oops! Something went wrong.")
 
-
-
-How to Handle multiple exceptions with a single except clause ?
-Give one example, We can also handle multiple exceptions with a single except clause. For that, we can use a tuple of values to specify multiple exceptions in an except clause.
-
-
-Try showing one example of Using try with finally
-
-a = 10
-b = 2
-
+4
 try:
-    c = a / b
-    print(c)
-except ZeroDivisionError as error:
-    print(error)
+    # Code that may raise an exception
+    x = 1 / 0
+except ZeroDivisionError:
+    # Code to handle the exception
+    print("Oops! Division by zero error.")
 finally:
-    print('Finishing up.')
+    # Code that is always executed
+    print("This code will always execute, whether or not an exception was raised.")
+5
+class MyException(Exception):
+    pass
+code 2(try:
+    # Code that may raise MyException
+    raise MyException("Something went wrong.")
+except MyException as e:
+    # Code to handle the custom exception
+    print("Caught custom exception:", e)
+6
+# Syntax error example
+print("Hello, world!'')  # syntax error - unmatched quote
 
+# Exception example
+x = 10
+y = 0
+try:
+    result = x / y
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+7
+# Example of ImportError
+try:
+    import nonexistent_module
+except ImportError:
+    print("Module does not exist")
+8
+try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+    if denominator == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    quotient = numerator / denominator
+    print(f"The quotient of {numerator}/{denominator} is {quotient}")
+except ValueError:
+    print("Invalid input. Please enter valid integer values for the numerator and denominator.")
+except ZeroDivisionError as e:
+    print(e)
+9
+try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+    assert denominator != 0, "Cannot divide by zero"
+    quotient = numerator / denominator
+    print(f"The quotient of {numerator}/{denominator} is {quotient}")
+except ValueError:
+    print("Invalid input. Please enter valid integer values for the numerator and denominator.")
+except AssertionError as e:
+    print(e)
+10
+# Exception Handling
+try:
+    x = int(input("Enter a number: "))
+    y = int(input("Enter another number: "))
+    print("Result:", x/y)
+except:
+    print("An error occurred")
 
-
-How to customize Exception Classes?
-
-Every syntax error is an exception but every exception cannot be a syntax error.” Justify the statement.
-
-
-When are the following built-in exceptions raised? Give examples to support your answers.a) ImportErrorb) IOErrorc) NameErrord) ZeroDivisionError
-
-
-What is the use of a raise statement?
-Write a code to accept two numbers and display the quotient. Appropriate exception should be raised if the user enters the second number (denominator) as zero (0).
-
-
-Use assert statement in Question No. 3 to test the division expression in the program.
-
-
-Define the following:a) Exception Handlingb) Throwing an exceptionc) Catching an exception
-
-a) Exception handling is a process in which a program handles runtime errors that occur during the execution of a program. It allows the program to continue running even if an error occurs, rather than crashing or exiting.
-
-b) Throwing an exception means raising an exception. This is done using the raise keyword, followed by an exception object. For example:
-
-raise Exception("An error occurred")
-
-c) Catching an exception means handling an exception. This is done using a try-except block, where the try block contains the code that might throw an exception, and the except block contains the code that handles the exception. For example:
+# Throwing an Exception
+def check_age(age):
+    if age < 18:
+        raise ValueError("Age must be greater than or equal to 18")
+    else:
+        print("You are eligible to vote!")
 
 try:
-  # code that might throw an exception
-except Exception as e:
-  # code that handles the exception
-If an exception is thrown in the try block, the program will jump to the except block and execute the exception handling code. If no exception is thrown, the except block will be skipped.
+    check_age(15)
+except ValueError as e:
+    print(e)
 
-
-
+# Catching an Exception
+try:
+    fruits = ["apple", "banana", "orange"]
+    print(fruits[3])
+except IndexError:
+    print("An index error occurred")
+finally:
+    print("The program has completed")

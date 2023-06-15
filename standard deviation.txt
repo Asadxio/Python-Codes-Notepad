@@ -1,0 +1,58 @@
+import statistics
+
+items = [12, 86, 87, 88, 86, 87, 85, 86]
+
+std_dev = statistics.stdev(items)
+
+print("The standard deviation of the given list is:", std_dev)
+
+2
+
+import pandas as pd
+
+d = {
+    'Name':['Alisa','Bobby','Cathrine','Madonna','Rocky','Sebastian','Jaqluine','Rahul','David','Andrew','Ajay','Teresa'],
+    'Score1':[62,47,55,74,31,77,85,63,42,32,71,57],
+    'Score2':[89,87,67,55,47,72,76,79,44,92,99,69],
+    'Score3':[56,86,77,45,73,62,74,89,71,67,97,68]
+}
+
+df = pd.DataFrame(d)
+
+score1_std_dev = df['Score1'].std()
+score2_std_dev = df['Score2'].std()
+score3_std_dev = df['Score3'].std()
+
+print("Standard deviation of Score1:", score1_std_dev)
+print("Standard deviation of Score2:", score2_std_dev)
+print("Standard deviation of Score3:", score3_std_dev)
+
+3
+import statistics
+
+x = [3, 7, 6, 4, 3, 4]
+
+std_dev = statistics.stdev(x)
+
+print("The standard deviation of the given data is:", std_dev)
+
+4
+
+import statistics
+
+x = [4, 8, 6, 5, 3, 2, 8, 9, 2, 5]
+
+variance = statistics.variance(x)
+
+print("The variance of the given list is:", variance)
+
+5
+
+import statistics
+
+x = [4, 8, 6, 5, 3, 2, 8, 9, 2, 5]
+
+sample_std_dev = statistics.stdev(x)
+population_std_dev = sample_std_dev / ((len(x) - 1) ** 0.5)
+
+print("Estimated population standard deviation:", population_std_dev)

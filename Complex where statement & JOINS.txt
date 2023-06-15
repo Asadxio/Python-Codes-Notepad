@@ -2,10 +2,24 @@
 Using a very popular dataset “Northwind sample database” perform a self join in “Customers” table
 Write a SQL statement to matched customers that are from the same city:
 
+SELECT c1.CustomerName, c2.CustomerName, c1.City
+FROM Customers c1
+INNER JOIN Customers c2
+ON c1.City = c2.City AND c1.CustomerID <> c2.CustomerID;
+
+
+
 
 2
 Write a Right join SQL query to specify that we want to perform a RIGHT JOIN, specifically looking for matches between the departments table and the employees table.
 DepartmentID is common in both tables
+
+SELECT *
+FROM employees
+RIGHT JOIN departments
+ON employees.DepartmentID = departments.DepartmentID;
+
+
 3
 We have two tables:
 employees - This table contains each employee’s ID, name, and department ID.
@@ -14,10 +28,25 @@ departments - This table contains each department’s ID and name
 (image)
 try to find a column that exists in each of the tables. In this example, it is the department_id column
 
-
+SELECT *
+FROM employees
+JOIN departments
+ON employees.department_id = departments.department_id;
 
 4
 Write a SQL statement to join two tables Customers and orders, select all customerName from the customer, ordersId from orders, and any orders they might have:
 Left join using unique customerID column in both the tables and order the CustomersName by Ascending.
+
+SELECT Customers.customerName, Orders.orderId 
+FROM Customers
+LEFT JOIN Orders ON Customers.customerID = Orders.customerID
+ORDER BY Customers.customerName ASC;
+
+
 5
 Write a SQL statement, to join the two tables using inner join: Customer table with Orders table both have customerID common in them and extract OrderID, OrderDate from Orders, CustomerName from Customers.
+
+SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers
+ON Orders.CustomerID = Customers.CustomerID;

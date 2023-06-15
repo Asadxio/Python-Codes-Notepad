@@ -1,0 +1,87 @@
+1
+import pandas as pd
+
+# Create a dictionary of series
+d = {'Name':pd.Series(['Tom', 'James', 'Ricky', 'Vin','Steve','Smith', 'Jack', 'Lee', 'Chanchal', 'Gasper', 'Naviya','Andres']),
+     'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+     'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+# Create a DataFrame
+df = pd.DataFrame(d)
+
+2
+
+import pandas as pd
+
+# Create a dictionary of series
+d = {'Name':pd.Series(['Tom', 'James', 'Ricky', 'Vin', 'Steve', 'Smith', 'Jack', 'Lee', 'Chanchal', 'Gasper', 'Naviya', 'Andres']),
+     'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+     'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+# Create a DataFrame
+df = pd.DataFrame(d)
+
+OR
+
+
+(# Calculate the mode of the Name column
+name_mode = df['Name'].mode()[0]
+print("Mode of Name column:", name_mode)
+
+# Calculate the mode of the Age column
+age_mode = df['Age'].mode()[0]
+print("Mode of Age column:", age_mode)
+
+# Calculate the mode of the Rating column
+rating_mode = df['Rating'].mode()[0]
+print("Mode of Rating column:", rating_mode))
+
+3
+
+from scipy.stats import hmean
+
+# Create a list of values
+values = [2, 4, 9.7]
+
+# Calculate the harmonic mean
+hmean_value = hmean(values)
+
+# Print the result
+print("Harmonic mean:", hmean_value)
+
+
+4
+
+import numpy as np
+
+# Create a NumPy array of ages
+ages = np.array([30, 30, 32, 38, 60])
+
+# Calculate the mean
+mean_age = np.mean(ages)
+
+# Calculate the median
+median_age = np.median(ages)
+
+# Calculate the mode
+mode_age = np.bincount(ages).argmax()
+
+# Print the results
+print("Mean age:", mean_age)
+print("Median age:", median_age)
+print("Mode age:", mode_age)
+
+5
+
+# Define the average score and the scores in the first five matches
+avg_score = 48
+scores = [51, 45, 46, 44, 49]
+
+# Calculate the total of the scores in the first five matches
+total_scores = sum(scores)
+
+# Calculate the score in the sixth match
+score_6th = (avg_score * 6) - total_scores
+
+# Print the score in the sixth match
+print("The score in the sixth match is:", score_6th)

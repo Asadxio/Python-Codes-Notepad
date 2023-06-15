@@ -1,0 +1,195 @@
+1
+import math
+
+x_bar = 62.1
+s = 13.46
+mu_null = 60
+n = 30
+
+z = (x_bar - mu_null) / (s / math.sqrt(n))
+
+print("Test statistic:", z)
+2
+from scipy.stats import t
+
+alpha = 0.025
+df = 29
+
+t_value = t.ppf(1 - alpha/2, df)
+
+print("T-Value:", t_value)
+3
+from scipy.stats import t
+
+t_value = 0.855
+df = 29
+
+p_value = 2 * t.sf(abs(t_value), df)
+
+print("P-Value:", p_value)
+4
+from scipy.stats import ttest_1samp
+
+sample_mean = 62.1
+sample_std = 13.46
+n = 30
+null_mean = 60
+
+t_statistic, p_value = ttest_1samp([sample_mean]*n, null_mean, scale=sample_std/math.sqrt(n))
+
+p_value *= 2 # two-tailed test
+
+print("P-Value:", p_value)
+5
+from scipy.stats import t
+
+null_hypothesis_mean = 60
+alternative_hypothesis_mean = 65
+significance_level = 0.05
+sample_mean = 62.1
+sample_std = 13.46
+sample_size = 30
+
+# Calculate the test statistic
+t_value = (sample_mean - null_hypothesis_mean) / (sample_std / (sample_size ** 0.5))
+
+# Calculate the degrees of freedom
+df = sample_size - 1
+
+# Calculate the P-value
+p_value = 2 * t.sf(abs(t_value), df)
+
+# Compare the P-value to the significance level and print the result
+if p_value < significance_level:
+    print(f"P-value: {p_value:.4f}. Reject the null hypothesis.")
+else:
+    print(f"P-value: {p_value:.4f}. Fail to reject the null hypothesis.")
+6
+import pandas as pd
+from scipy.stats import ttest_1samp
+
+null_hypothesis_mean = 0.3
+significance_level = 0.05
+data = pd.Series([0.593,0.142,0.329,0.691,0.231,0.793,0.519,0.392,0.418])
+
+# Calculate the test statistic and P-value
+t_statistic, p_value = ttest_1samp(data, null_hypothesis_mean)
+
+# Calculate the one-tailed P-value
+one_tailed_p_value = p_value / 2
+
+# Compare the one-tailed P-value to the significance level and print the result
+if one_tailed_p_value < significance_level and t_statistic < 0:
+    print(f"One-tailed P-value: {one_tailed_p_value:.4f}. Reject the null hypothesis in favor of the alternative hypothesis (μ < {null_hypothesis_mean}).")
+else:
+    print(f"One-tailed P-value: {one_tailed_p_value:.4f}. Fail to reject the null hypothesis (μ >= {null_hypothesis_mean}).")
+7
+from statsmodels.stats.proportion import proportions_ztest
+
+null_hypothesis_prop = 0.5
+significance_level = 0.05
+x = 10
+n = 40
+p = 0.45
+
+# Calculate the test statistic and P-value
+z_stat, p_value = proportions_ztest(x, n, null_hypothesis_prop)
+
+# Compare the test statistic to the critical value and print the result
+if abs(z_stat) > abs(proportions_ztest(significance_level/2, 0, 1)[0]):
+    print(f"Test statistic: {z_stat:.4f}. Reject the null hypothesis.")
+else:
+    print(f"Test statistic: {z_stat:.4f}. Fail to reject the null hypothesis.")
+8
+from scipy.stats import norm
+
+alpha = 0.01
+
+# Calculate the Z-value for the given alpha in the left tail
+z_value = norm.ppf(alpha)
+
+print(f"Z-value for alpha={alpha} in the left tail: {z_value:.4f}")
+9
+from scipy.stats import norm
+
+def p_value_left(z_value):
+    """
+    Calculates the P-value for a left-tailed test with a Z-value of z_value.
+    """
+    p_value = norm.cdf(z_value)
+    return p_value
+
+# Test the function with a Z-value of -2.543
+z_value = -2.543
+p_value = p_value_left(z_value)
+print(f"P-value for Z-value of {z_value}: {p_value:.4f}")
+10
+from scipy.stats import binom_test
+
+def p_value_prop_left(n, x, p_hypo):
+    """
+    Calculates the P-value for a left-tailed hypothesis test for a proportion.
+    n: sample size
+    x: number of occurrences
+    p_hypo: hypothesized proportion
+    """
+    p_value = binom_test(x, n, p=p_hypo, alternative='less')
+    return p_value
+
+# Test the function with the given values
+n = 40
+x = 10
+p_hypo = 0.45
+p_value = p_value_prop_left(n, x, p_hypo)
+print(f"P-value for a left-tailed test: {p_value:.4f}")
+11
+import numpy as np
+
+def proportion_test_statistic(x, n, p):
+    """
+    Calculates the test statistic for a proportion.
+    x: number of successes
+    n: sample size
+    p: hypothesized proportion
+    """
+    q = 1 - p
+    np = n * p
+    npq = n * p * q
+    z = (x - np) / npq**0.5
+    return z
+
+# Test the function with the given values
+x = 10
+n = 100
+p = 0.5
+test_statistic = proportion_test_statistic(x, n, p)
+print(f"Test statistic: {test_statistic:.4f}")
+12
+from scipy.stats import norm
+
+alpha = 0.005  # alpha/2 for a two-tailed test
+z_alpha_2 = norm.ppf(alpha/2)  # z-value for alpha/2 in the left tail
+print(f"Z-value for alpha/2 = {alpha/2} in the left tail: {z_alpha_2:.4f}")
+13
+from scipy.stats import norm
+
+alpha = 0.005  # alpha for a one-tailed test
+z_alpha = norm.ppf(alpha)  # z-value for alpha in the left tail
+print(f"Z-value for alpha = {alpha} in the left tail: {z_alpha:.4f}")
+14
+from scipy.stats import norm
+
+z = -8  # given z-value
+p_value = norm.cdf(z) * 2  # two-tailed test
+print(f"P-value for Z-value of {z} for a two-tailed test: {p_value:.16f}")
+15
+from scipy import stats
+
+n = 100  # sample size
+x = 10  # number of occurrences
+p = 0.50  # hypothesized proportion
+p_hat = x/n  # sample proportion
+se = ((p*(1-p))/n)**0.5  # standard error
+z = (p_hat - p) / se  # test statistic
+p_value = stats.t.cdf(z, df=n-1) * 2  # two-tailed test
+print(f"P-value for the two-tailed test: {p_value:.4f}")

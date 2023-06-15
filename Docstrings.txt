@@ -4,17 +4,49 @@ print (math.sqrt(25))
 print (math.sqrt(16))
 
 Write a code to create your own function for adding two number and add custom docstring inside the function. And then print your function documentation.
- 
+
+ def add_numbers(a, b):
+    """
+    This function adds two numbers and returns the result.
+
+    Parameters:
+    a (int): The first number to be added.
+    b (int): The second number to be added.
+
+    Returns:
+    int: The sum of the two numbers.
+    """
+    return a + b
+
+# Print the function's documentation
+print(add_numbers.__doc__)
+
 
 Write a code to create your own function for adding two number and add custom docstring inside the function. And then print your function documentation without __doc__.
+
+def add_numbers(num1, num2):
+    """
+    This function takes two numbers and returns their sum.
+    
+    Parameters:
+    num1 (int): First number
+    num2 (int): Second number
+    
+    Returns:
+    int: The sum of num1 and num2
+    """
+    return num1 + num2
+
+# printing the function documentation without using __doc__
+print(add_numbers.__doc__)
 
 
 Write a code for one liner documentionf or a custom function
 
-n = 5
+def multiply(a, b):
+    """Returns the product of two numbers."""
+    return a * b
 
-# one liner code for half pyramid pattern
-print('\n'.join('* ' * i for i in range(1, n + 1)))
 
 
 

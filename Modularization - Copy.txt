@@ -1,15 +1,53 @@
 Write a simple code to make a package that contains modules
 (IMAGE)
 
+from my_package.module1 import hello
+from my_package.module2 import goodbye
+
+hello()
+goodbye()
+
+
 
 How to use the built-in function dir() to list all valid attributes and methods for that module? Module -math
+ 
+import math
+print(dir(math))
 
 
 Write a code to see builtin modules name from a module, For example, sys
  
+import sys
+
+print(sys.builtin_module_names)
+
+
 
 Write a code to turn the Fibonacci function into a module, on import Fibonacci it would return the Fibonacci of a number.
  
+def fib(n):
+    """Return a list containing the Fibonacci series up to n."""
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a+b
+    return result
+
 
 Write a program to make your own module and import the py file as a module
+
+def greet(name):
+    print(f"Hello, {name}!")
+    
+def add(x, y):
+    return x + y
+
+code 2 try(
+import my_module
+
+my_module.greet("Alice")
+
+result = my_module.add(2, 3)
+print(result)
 

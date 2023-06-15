@@ -1,0 +1,240 @@
+Plotting (univariate, bi-variate) - Programming Assignment 1Submit Quiz
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create a histogram using seaborn's displot function
+sns.displot(flipper_length, kde=False)
+
+# Show the plot
+sns.plt.show()
+
+Write a program to load penguins dataset from seaborn and plot histplot/displot for the flipper_length_mm with bin width=3.
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create a histogram using seaborn's displot function
+sns.displot(flipper_length, kde=False, binwidth=3)
+
+# Show the plot
+sns.plt.show()
+
+Write a program to load penguins dataset from seaborn and plot histplot/displot for the flipper_length_mm with number of bins =20.
+
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create a histogram using seaborn's displot function with 20 bins
+sns.displot(flipper_length, kde=False, bins=20)
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load penguins dataset from seaborn and plot histplot/displot for the flipper_length_mm with hue=”species”.
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create a histogram using seaborn's displot function with hue set to "species"
+sns.displot(penguins, x='flipper_length_mm', hue='species', kde=False)
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load penguins dataset from seaborn and plot displot for the flipper_length_mm with kind=”kde”.
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create a KDE plot using seaborn's displot function with kind set to "kde"
+sns.displot(flipper_length, kind='kde')
+
+# Show the plot
+sns.plt.show()
+
+Write a program to load penguins dataset from seaborn and plot displot for the flipper_length_mm with kind=”kde” and hue=”species”.
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create a KDE plot using seaborn's displot function with kind set to "kde" and hue set to "species"
+sns.displot(penguins, x='flipper_length_mm', hue='species', kind='kde')
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load penguins dataset from seaborn and plot displot for the flipper_length_mm with kind=”ecdf”.
+ 
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm variable
+flipper_length = penguins['flipper_length_mm']
+
+# Create an ECDF plot using seaborn's displot function with kind set to "ecdf"
+sns.displot(flipper_length, kind='ecdf')
+
+# Show the plot
+sns.plt.show()
+
+Write a program to load penguins dataset from seaborn and plot displot for the flipper_length_mm and bill_depth_mm with hue=”species”.
+ 
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm and bill_depth_mm variables
+flipper_length = penguins['flipper_length_mm']
+bill_depth = penguins['bill_depth_mm']
+
+# Create a histogram using seaborn's displot function with hue set to "species"
+sns.displot(penguins, x='flipper_length_mm', y='bill_depth_mm', hue='species', kind='hist')
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load penguins dataset from seaborn and plot jointplot for the flipper_length_mm and bill_depth_mm with hue=”species”.
+
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Extract the flipper_length_mm and bill_depth_mm variables
+flipper_length = penguins['flipper_length_mm']
+bill_depth = penguins['bill_depth_mm']
+
+# Create a joint plot using seaborn's jointplot function with hue set to "species"
+sns.jointplot(data=penguins, x='flipper_length_mm', y='bill_depth_mm', hue='species')
+
+# Show the plot
+sns.plt.show()
+
+
+. Write a program to load penguins dataset from seaborn and plot a pairplot for penguins dataframe.
+
+
+import seaborn as sns
+
+# Load the penguins dataset
+penguins = sns.load_dataset('penguins')
+
+# Create a pairplot using seaborn's pairplot function
+sns.pairplot(data=penguins)
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load tips dataset from seaborn and plot boxplot for total_bill on each day.
+ 
+
+import seaborn as sns
+
+# Load the tips dataset
+tips = sns.load_dataset('tips')
+
+# Create a boxplot using seaborn's boxplot function
+sns.boxplot(data=tips, x='day', y='total_bill')
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load tips dataset from seaborn and plot boxplot for total_bill on each day. With hue=”smoker”.
+
+import seaborn as sns
+
+# Load the tips dataset
+tips = sns.load_dataset('tips')
+
+# Create a boxplot using seaborn's boxplot function
+sns.boxplot(data=tips, x='day', y='total_bill', hue='smoker')
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load tips dataset from seaborn and plot violinplot for total_bill on each day. With hue=”sex”.
+ 
+
+import seaborn as sns
+
+# Load the tips dataset
+tips = sns.load_dataset('tips')
+
+# Create a violinplot using seaborn's violinplot function
+sns.violinplot(data=tips, x='day', y='total_bill', hue='sex')
+
+# Show the plot
+sns.plt.show()
+
+
+Write a program to load tips dataset from seaborn and plot regression line between total_bill and tip with 95% confidence interval.
+
+
+import seaborn as sns
+
+# Load the tips dataset
+tips = sns.load_dataset('tips')
+
+# Create a scatterplot using seaborn's regplot function
+sns.regplot(data=tips, x='total_bill', y='tip')
+
+# Show the plot
+sns.plt.show()
+
+Write a program to load tips dataset from seaborn and plot pairplot with x_vars as “total_bill” and “size” , y_vars=”tip”.
+
+import seaborn as sns
+
+# Load the tips dataset
+tips = sns.load_dataset('tips')
+
+# Create a pairplot using seaborn's pairplot function
+sns.pairplot(data=tips, x_vars=['total_bill', 'size'], y_vars='tip')
+
+# Show the plot
+sns.plt.show()
+

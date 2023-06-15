@@ -1,54 +1,29 @@
-Random sampling using weights, write a program that creates a random sample from a population using weighted probabilities.
-Definition: In weighted random sampling (WRS) the items are weighted and the probability of each item to be selected is determined by its relative weight.
-
-import pandas as pds
-
-# TimeToReach vs distance
-time2reach =  {"Distance":[10,15,20,25,30,35,40,45,50,55],
-                "TimeToReach":[15,20,25,30,40,45,50,60,65,70]};
-
-dataFrame = pds.DataFrame(data=time2reach);
-
-#weight define
-w = pds.Series(data=[0.05, 0.05, 0.05,
-                     0.05, 0.05, 0.1,
-                     0.15, 0.15, 0.15,
-                     0.2]);
-
-A)
 import numpy as np
 import pandas as pd
 
-# TimeToReach vs distance
 time2reach =  {"Distance":[10,15,20,25,30,35,40,45,50,55],
-                "TimeToReach":[15,20,25,30,40,45,50,60,65,70]};
+               "TimeToReach":[15,20,25,30,40,45,50,60,65,70]};
 
 dataFrame = pd.DataFrame(data=time2reach);
 
-#weight define
 w = pd.Series(data=[0.05, 0.05, 0.05,
-                     0.05, 0.05, 0.1,
-                     0.15, 0.15, 0.15,
-                     0.2]);
+                    0.05, 0.05, 0.1,
+                    0.15, 0.15, 0.15,
+                    0.2]);
 
-# Create a function to take a sample using WRS
 def weighted_random_sample(dataframe, weight):
-    # Normalize the weights
-    weight = weight / weight.sum()
-    # Select a random value between 0 and 1
-    random_value = np.random.random()
-    # Create a cumulative sum of the weights
-    cumulative_sum = weight.cumsum()
-    # Use the random value to select an index from the cumulative sum
-    index = (random_value < cumulative_sum).idxmax()
-    # Return the selected row from the dataframe
-    return dataframe.iloc[index]
+   weight = weight / weight.sum()
+   random_value = np.random.random()
+   cumulative_sum = weight.cumsum()
+   index = (random_value < cumulative_sum).idxmax()
+   return dataframe.iloc[index]
 
-# Test the function by taking a sample from the dataframe
 sample = weighted_random_sample(dataFrame, w)
 print(sample)
 
+
 2
+
 import pandas as pd
 
 data = pd.read_csv("C:/Users/alias/Downloads/Compressed/archive_6/dc-wikia-data.csv")
@@ -60,6 +35,18 @@ sample = data.sample(frac=sample_size)
 print(sample)
 
 3
+
+import pandas as pds
+callTimes = {"Age": [20,25,31,37,43,44,52,58,64,68,70,77,82,86,91,96],
+            "Call Duration":[17,25,10,15,5,7,15,25,30,35,10,15,12,14,20,12]};
+dataFrame = pds.DataFrame(data=callTimes);
+
+sample = dataFrame.sample(n=5)
+
+print(sample)
+
+4
+
 import random
 
 population = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]

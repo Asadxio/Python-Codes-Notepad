@@ -1,0 +1,62 @@
+import numpy as np
+
+# Create two numpy arrays
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([6, 7, 8, 9, 10])
+
+# Find the variance between the two arrays
+variance = np.var(arr1 - arr2)
+
+print("Variance between the two arrays:", variance)
+
+2
+
+import numpy as np
+
+x = np.array([[3, 1, 4], [7, 3, 8], [1, 5, 7]])
+
+covariance_matrix = np.cov(x)
+
+print("Covariance matrix:\n", covariance_matrix)
+
+3
+
+import pandas as pd
+
+# Define two lists
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+# Convert the lists to series
+x_series = pd.Series(x)
+y_series = pd.Series(y)
+
+# Find the covariance between the two series
+covariance = x_series.cov(y_series)
+
+print("Covariance between the two series:", covariance)
+
+4
+
+import pandas as pd
+
+data = {"col1":[1,5,4],"col2":[3,7,1],"col3":[6,8,1],"col4":[10,7,2]}
+
+df = pd.DataFrame(data)
+
+covariance_matrix = df.cov()
+
+print("Covariance matrix:\n", covariance_matrix)
+
+5
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with NaN values
+df = pd.DataFrame({'A': [1, 2, np.nan, 4, 5], 'B': [np.nan, 7, 8, 9, 10], 'C': [11, 12, 13, np.nan, 15]})
+
+# Find the covariance matrix
+covariance_matrix = df.cov()
+
+print("Covariance matrix:\n", covariance_matrix)
+
